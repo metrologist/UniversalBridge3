@@ -152,15 +152,15 @@ class UNIVERSALBRIDGE(object):
         else:
             resolution = 0  # the assumption is that you will then take a mean and sd of several measured values
         Adial_res = ureal(0, self.rdialmax * resolution, 10,
-                          'Adialres' + repr(dialA))  # label identifies dial setting
+                          'Adialres' + repr(dialA.x))  # label identifies dial setting
         assert ubrange[0] in self.ranges, "first range identifier character must be in 1...7"
         assert ubrange[1] in self.config, "second range identifier character must by Y or Z"
         if int(ubrange[0]) < 4 and ubrange[1] == 'Z':  # i.e. 1Z, 2Z or 3Z gets an aux resolution term
             aux_resolution = self.res_aux  # aux_resolution is 10 ppm for drifting I balance against copper resistance
         else:
             aux_resolution = 0.0  # only Z ranges 1, 2 and 3 add scatter with drifting I and P balances
-        Adial_res = Adial_res + ureal(0, self.rdialmax * aux_resolution, 10, 'Adialauxbal' + repr(dialA))
-        Bdial_res = ureal(0, self.xdialmax * resolution, 10, 'Bdialres' + repr(dialB))  # in a gtc budget
+        Adial_res = Adial_res + ureal(0, self.rdialmax * aux_resolution, 10, 'Adialauxbal' + repr(dialA.x))
+        Bdial_res = ureal(0, self.xdialmax * resolution, 10, 'Bdialres' + repr(dialB.x))  # in a gtc budget
         dialA = dialA + Adial_res
         dialB = dialB + Bdial_res
         # select relevant R4 based on range

@@ -1,8 +1,7 @@
 """
 calculate_imp.py calculates immittances of components measured with the Universal Impedance Bridge
 """
-import ubridge3 as ub
-# import GTC as gtc
+from ubridge3 import UNIVERSALBRIDGE
 from GTC import ureal
 from GTC.function import mul2
 from GTC.reporting import k_factor, budget
@@ -162,10 +161,10 @@ class UUT(object):
 
 
 if __name__ == "__main__":
-    calfile = r'ubdict_nov_2017.csv'
+    calfile = r'ubdict_dec_2019.csv'
     room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambient temperature given in conditions
     # create the bridge object
-    my_ubridge = ub.UNIVERSALBRIDGE(calfile, room_temperature)  # consider relevanc of chosen temperature
+    my_ubridge = UNIVERSALBRIDGE(calfile, room_temperature)  # consider relevanc of chosen temperature
     block_descriptor = [9, 30, 1, 15]  # this simply has to correctly match the spreadsheet.[9, 35, 1, 15]
     z_set = UUT(my_ubridge, 'InductorSet.xlsx', 'pyUBreadings', block_descriptor, 'indResults.xlsx', 'pyUBresults')
     # note that a different temperature could be used for the UUT
@@ -175,11 +174,10 @@ if __name__ == "__main__":
     cmc_list = z_set.cmc_check(my_ubridge)
     z_set.create_output(z_zero_corrected, cmc_list)
 
-    """
     # Can also print the budget for individual lines
     #     cap_set.inspect_budget(4, cap_zero_corrected)
-    cap_set.inspect_budget(12, cap_zero_corrected)
-
+    z_set.inspect_budget(8, z_zero_corrected)
+    """
     print(' ')
     print('Some checks for the 16074A')
     induct_dial = 0
