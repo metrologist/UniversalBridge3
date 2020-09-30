@@ -1,0 +1,9 @@
+At the time of validation (August 2020) of MSLT.E.023.07 the version of GTC was
+Name: GTC
+Version: 1.3.0.dev0
+Summary: The GUM Tree Calculator for Python
+Home-page: https://github.com/MSLNZ/GTC
+Author: Measurement Standards Laboratory of New Zealand
+Author-email: info@measurement.govt.nz
+
+This was a development branch that included second order multiplication.
