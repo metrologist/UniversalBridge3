@@ -23,14 +23,15 @@ class CALCULATOR(object):
         ws0 = wb.active  # default active worksheet in position '0'
         ws0.title = this_title
         no_rows = len(list_set)
-        no_columns = len(list_set[0])
+
         for i in range(no_rows):
+            no_columns = len(list_set[i])  # modified 14/10/2020 to allow variable length rows.
             for j in range(no_columns):
                 ws0.cell(row=i + 2, column=j + 1, value=list_set[i][j])
         try:
             wb.save(filename=self.output)
         except IOError:
-            print('Could not create output file in "makeworkbook" method in Excel.py')
+            print('Could not create output file in "makeworkbook" method in excel3.py')
 
     def getdata_block(self, datasheet, block_range):
         """

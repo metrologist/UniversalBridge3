@@ -39,6 +39,13 @@ class UUT(object):
         return my_copy_data, thisdict, this_uut
 
     def calculate_values(self, room_temperature, this_ubridge):
+        """
+        Separates out all readings labelled 'coax zero' of which it is assumed that there is one and only one for each
+        range used. These can subsequently be subtracted.
+        :param room_temperature:
+        :param this_ubridge: UNIVERSALBRIDGE object
+        :return: a list of calculated values including the calculated zeros and a list of calculated zeros
+        """
         y = []
         yzero = []
         for x in self.datdict:
@@ -71,6 +78,12 @@ class UUT(object):
         return y, yzero
 
     def subtract_coax_zeros(self, all_items, zeros):
+        """
+        Subtracts the coax zeros from all values and so also checks that the coax zeros also subtract
+        :param all_items:
+        :param zeros:
+        :return: a list of zero corrected values
+        """
         y_corrected = []  # zero corrected values
         for x in all_items:  # all_items is full list of answers
             for zero in zeros:  # zeros is the list of coax zeros
@@ -96,6 +109,85 @@ class UUT(object):
                 z_corrected.append((all_items[i][3] - all_items[11][3], all_items[i][4] - all_items[11][4]))
         return(z_corrected)
 
+    def subtract_box_zeros(self, all_values, exclude, vernier_uncert, resist_uncert):
+        """
+        all_values are the calculated values after correcting for coax zeros. For a capacitance box the change values
+        need the box-zero (as measured on the same range) subtracted.
+        :param all_values:
+        :param exclude: list of labels that do not have the box_zero subtracted
+        :param vernier_uncert: uncertainty due to setting of vernier dial, dial identified by 'E'.
+        :param resist_uncert: uncertainty due to varying series resistance in connection to the box.
+        :return: a list of change values from a dial setting of zero to the indicated setting
+        """
+        box_zeros = []  # create the list of box_zero values and choose the reported box zero on range 6Y
+        for x in all_values:
+            if x[0]=='box_zero':
+                box_zeros.append(x)
+        y_corrected = []  # zero corrected values
+        for x in all_values:  # all_items is full list of answers
+            for zero in box_zeros:  # zeros is the list of box zeros
+                if zero[2] == x[2]:  # find a zero of the same nominal frequency
+                    if zero[1] == x[1]:  # find if the zero is also the correct range
+                        if x[0] not in exclude:
+                            #  add the effect of some series resistance on the conductance of the box
+                            newG =x[3] + (2*pi*float(x[2]))**2 * resist_uncert * x[4]**2  # w^2*r*C^2
+                            vernier = 0  # assume not the vernier dial so no additional uncertainty
+                            if x[0][0] == 'E':  # if it is the vernier dial then add the setting uncertainty
+                                vernier = vernier_uncert
+                            G = newG - zero[3]
+                            C = x[4] - zero[4] + vernier
+                            if C.x == 0:  # avoid divide by zero for corrected zeros
+                                tan_delta = 0
+                            else:
+                                tan_delta = G/((2*pi*float(x[2]))*C)
+                            # zero_corrected = (newG - zero[3], x[4] - zero[4] + vernier)  # correct r and x values
+                            # add tan delta as third member
+                            zero_corrected = (G, C, tan_delta)
+                        else:
+                            zero_corrected = (x[3], x[4])
+                        if x[0] == 'box_zero':  # check that the zeros cancel, i.e. a duplicate check
+                            # print('box zero check',zero_corrected)
+                            # print(x)
+                            assert zero_corrected[0].x == 0, 'zero is not cancelling when subtracted from itself'
+                            assert zero_corrected[1].x == 0, 'zero is not cancelling when subtracted from itself'
+                        # print(x[0], zero_corrected)
+
+                        y_corrected.append(zero_corrected)
+
+        return all_values, box_zeros, y_corrected
+
+    def main_zero(self, all_values, zero_uncert):
+        """
+        Specified for a 2-term cap box where a value is measured for all dials set to zero. This requires a measurement
+        with the box set to zero followed by subtracting the value measured with the box removed from the measurement
+        cables.
+        :param all_values: the list as returned by calculate_values
+        :param zero_uncert: ureal uncertainty for definition and repeatability of box zero
+        :return:
+        """
+        index = 'NA'
+        freq = 0  # until conditionally read in
+        box_zero = 'NA'
+        copper_zero = 'NA'
+        for x in all_values:
+            if x[0]=="CuZero":
+                copper_zero = x
+            if x[0]=="box_zero" and x[1]=="6Y":
+                box_zero = x
+                freq = float(x[2])
+        assert box_zero is not 'NA', 'cannot find box zero on range 6Y'
+        assert copper_zero is not 'NA', 'cannot copper zero (expected on range 6Y)'
+        all_dial_zero = (box_zero[3] - copper_zero[3], box_zero[4] + zero_uncert - copper_zero[4])
+        G = all_dial_zero[0]
+        C = all_dial_zero[1]
+        tan_delta = G/((2*pi*freq)*C)
+        all_dial_zero = (all_dial_zero[0], all_dial_zero[1], tan_delta)
+        # find index of the 6Y box zero
+        for i in range(len(all_values)):
+            if all_values[i][0] == "box_zero" and all_values[i][1] == "6Y":
+                index =i
+        return all_dial_zero, index
+
     def cmc_check(self, this_ubridge):
         cmcs = []  # for the list of cmcs
         for x in self.datdict:
@@ -107,10 +199,18 @@ class UUT(object):
         pass
 
     def create_output(self, y_corrected, cmcs):
+        # allow for 2 (r and x) or 3 (r, x and tand) versions of y_corrected
+
         # now put all info in spreadsheet
         for i in range(len(y_corrected)):
+            if len(y_corrected[i]) == 3:
+                td = True
+            else:
+                td = False
             rpart = y_corrected[i][0]
             xpart = y_corrected[i][1]
+            if td:
+                tdpart = y_corrected[i][2]
             # first calculate coverage factors
             if isnan(rpart.df):  # avoiding the coax zeros with no uncertainty
                 kr = 0
@@ -120,6 +220,11 @@ class UUT(object):
                 kx = 0
             else:
                 kx = k_factor(xpart.df)
+            if td:
+                if tdpart==0:
+                    ktd = 0
+                else:
+                    ktd = k_factor(tdpart.df)
             # then expanded unertainties
             xU = xpart.u * kx
             rU = rpart.u * kr
@@ -129,6 +234,17 @@ class UUT(object):
             self.data_block[i].append(rpart.x)
             self.data_block[i].append(rU)  # expanded uncertainty
             self.data_block[i].append(kr)
+            if td:
+                if tdpart==0:  # no tan delta to report
+                    self.data_block[i].append(0)
+                    self.data_block[i].append(0)
+                    self.data_block[i].append(0)
+                else:
+                    tdU = tdpart.u * ktd
+                    self.data_block[i].append(tdpart.x)
+                    self.data_block[i].append(tdU)  # expanded uncertainty
+                    self.data_block[i].append(ktd)
+
             # then compare with CMCs
             # first decide on which r CMC to use
             # note this test only applies to Z ranges
