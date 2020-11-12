@@ -7,12 +7,12 @@ from ubridge3 import UNIVERSALBRIDGE
 from calculate_imp import UUT
 
 ang_freq = 1e4
-calfile = r'ubdict_dec_2019.csv'
+calfile = r'ub_dict_oct_2020.csv'
 room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambient temperature given in conditions
 # create the bridge object
 my_ubridge = UNIVERSALBRIDGE(calfile, room_temperature)  # consider relevance of chosen temperature
 block_descriptor = [9, 70, 1, 15]  # this simply has to correctly match the spreadsheet.
-cap_set = UUT(my_ubridge, 'DecadeCap.xlsx', 'pyUBreadings', block_descriptor, 'decadeCap_Results.xlsx', 'pyUBresults')
+cap_set = UUT(my_ubridge, 'FinalDecadeCap.xlsx', 'pyUBreadings', block_descriptor, 'decadeCap_Results.xlsx', 'pyUBresults')
 
 # note that a different temperature could be used for the UUT
 cap_answers, cap_zeros = cap_set.calculate_values(room_temperature, my_ubridge)
