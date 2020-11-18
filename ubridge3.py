@@ -238,7 +238,7 @@ class UNIVERSALBRIDGE(object):
 
 if __name__ == "__main__":
     temperature = ureal(20, 0.5, 10, 'temperature')  # temperature at which bridge is being used
-    calfile = r'ubdict_nov_2017.csv'  # the file that contains practically all calibration and uncertainty information
+    calfile = r'ub_dict_nov_2020.csv'  # the file that contains practically all calibration and uncertainty information
     # create the bridge object
     ubridge = UNIVERSALBRIDGE(calfile, temperature)  # temperature put here as it might be in common with the UUT
 
@@ -315,3 +315,8 @@ if __name__ == "__main__":
         print(repr(dict_ivd[x]))
 
     print(repr(ubridge.C1))
+    print('Finally, sort confusion with preparation for R_L cal')
+    x = '5Z'
+    freq = 1000
+    z = ubridge.bridge_value(x, 10001312, 0, freq, 0)
+    print(x, z.imag / (2 * pi * freq), 'H', z.real, 'ohm')
