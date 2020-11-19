@@ -2,7 +2,7 @@
 calculate_imp.py calculates immittances of components measured with the Universal Impedance Bridge
 """
 from ubridge3 import UNIVERSALBRIDGE
-from GTC import ureal
+from GTC import ureal, atan
 from GTC.function import mul2
 from GTC.reporting import k_factor, budget
 from math import pi, isnan
@@ -100,6 +100,13 @@ class UUT(object):
         return y_corrected
 
     def subtract_twist_zeros(self, all_items):
+        """
+        Specific to the muirhead decade inductors defined by the change from zero setting (just twisted wires
+        shorted by the zero switch position) to the selected switch position. The decision on i<11 is a crude
+        way of identifying the correct zero for each of the two switchable inductors being calibrated.
+        :param all_items: a list of four-element arrays containing [label, range, frequency, ureal(r), ureal(x)]
+        :return: zero corrected list of (ureal(r), ureal(x))
+        """
         z_corrected = []  # zero corrected values
         for i in range(len(all_items)):
             # print(all_items[i])
@@ -158,9 +165,9 @@ class UUT(object):
 
     def main_zero(self, all_values, zero_uncert):
         """
-        Specified for a 2-term cap box where a value is measured for all dials set to zero. This requires a measurement
-        with the box set to zero followed by subtracting the value measured with the box removed from the measurement
-        cables.
+        Specified for a 2-term cap box where a value is measured for all dials set to zero. This requires a
+        measurement with the box set to zero followed by subtracting the value measured with the box removed
+        from the measurement cables.
         :param all_values: the list as returned by calculate_values
         :param zero_uncert: ureal uncertainty for definition and repeatability of box zero
         :return:
@@ -199,9 +206,12 @@ class UUT(object):
         pass
 
     def create_output(self, y_corrected, cmcs):
-        # allow for 2 (r and x) or 3 (r, x and tand) versions of y_corrected
-
-        # now put all info in spreadsheet
+        """
+        Creates a table of calculated results in the output spreadsheet for UUT
+        :param y_corrected: allows for 2 (r and x) or 3 (r, x and tand) versions of y_corrected.
+        :param cmcs: as calculated in cmc_check
+        :return: creates the output spreadsheet.
+        """
         for i in range(len(y_corrected)):
             if len(y_corrected[i]) == 3:
                 td = True
@@ -275,6 +285,23 @@ class UUT(object):
         print()
         return
 
+    def cap_tand(self, caps):
+        """
+        Returns G/wC in mrad. Note that this is for two or four terminal-pair capacitors
+        where there is no need to consider variability in series resistance.
+        :param caps: ist of zero_corrected coax capacitor values
+        :return: caps with tand delta (in milliradians) added as the third component
+        """
+        tan_deltas = []
+        for i in range(len(caps)):
+            freq = float(self.data_block[i][1])  # get frequency from the data_block
+            w = 2 * pi * freq
+            if caps[i][1] != 0:
+                calc_tand = atan(caps[i][0] / (caps[i][1] * w))
+            else:
+                calc_tand = 0
+            tan_deltas.append((caps[i][0], caps[i][1], calc_tand * 1e3))  # 1e3 converts to miilliradians
+        return tan_deltas
 
 if __name__ == "__main__":
     calfile = r'ubdict_dec_2019.csv'
