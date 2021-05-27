@@ -11,7 +11,7 @@ room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambie
 # create the bridge object
 my_ubridge = UNIVERSALBRIDGE(calfile, room_temperature)  # consider relevance of chosen temperature, 20.0 is usual
 block_descriptor = [9, 24, 1, 15]  # this simply has to correctly match the spreadsheet.
-cap_set = UUT(my_ubridge, 'CoaxCap.xlsx', 'pyUBreadings', block_descriptor, 'coaxCap_Results.xlsx', 'pyUBresults')
+cap_set = UUT(my_ubridge, 'S22088_CoaxCap_test.xlsx', 'pyUBreadings', block_descriptor, 'coaxCap_Results.xlsx', 'pyUBresults')
 # note that a different temperature could be used for the UUT
 cap_answers, cap_zeros = cap_set.calculate_values(room_temperature, my_ubridge)
 cap_zero_corrected = cap_set.subtract_coax_zeros(cap_answers, cap_zeros)

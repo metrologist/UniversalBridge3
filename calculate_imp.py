@@ -182,8 +182,8 @@ class UUT(object):
             if x[0]=="box_zero" and x[1]=="6Y":
                 box_zero = x
                 freq = float(x[2])
-        assert box_zero is not 'NA', 'cannot find box zero on range 6Y'
-        assert copper_zero is not 'NA', 'cannot copper zero (expected on range 6Y)'
+        assert box_zero != 'NA', 'cannot find box zero on range 6Y'
+        assert copper_zero != 'NA', 'cannot find copper zero (expected on range 6Y)'
         all_dial_zero = (box_zero[3] - copper_zero[3], box_zero[4] + zero_uncert - copper_zero[4])
         G = all_dial_zero[0]
         C = all_dial_zero[1]
