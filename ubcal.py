@@ -191,9 +191,9 @@ class RESISTANCE(object):
 
 if __name__ == "__main__":
     # set up for RESISTANCE class
-    cal_file = r'ub_dict_nov_2020.csv'
-    data_file = r'UBcalibrationJuly2014_for python.xlsx'
-    output_file = r'test_out2.xlsx'
+    cal_file = r'data_csv/ub_dict_nov_2020.csv'
+    data_file = r'spread_sheets/UBcalibrationJuly2014_for python.xlsx'
+    output_file = r'spread_sheets/test_out2.xlsx'
     calc = RESISTANCE(cal_file, data_file, output_file)
     # collect all data
     radata = calc.dc_resistance_data('csv_data', [3, 14, 1, 4])

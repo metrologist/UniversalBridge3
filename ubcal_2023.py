@@ -5,9 +5,9 @@ from math import sqrt, pi
 
 
 # set up for RESISTANCE class
-cal_file = r'ub_dict_nov_2020.csv'
-data_file = r'UBcalibrationApril2023.xlsx'
-output_file = r'out_2023.xlsx'
+cal_file = r'data_csv/ub_dict_nov_2020.csv'
+data_file = r'spread_sheets/UBcalibrationApril2023.xlsx'
+output_file = r'spread_sheets/out_2023.xlsx'
 calc = RESISTANCE(cal_file, data_file, output_file)
 # collect all data
 radata = calc.dc_resistance_data('csv_data', [3, 14, 1, 4])  # set 'a' of dc resistance measurements

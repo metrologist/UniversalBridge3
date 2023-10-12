@@ -247,7 +247,7 @@ if __name__ == "__main__":
     # answer = ubridge.bridge_value('7Y', 46, 10004, 1.59135e3, 1)
     print(repr(answer.real))
     print(repr(answer.imag / (2 * pi * 1.59135e3)))
-    for l, u in budget(answer.real, trim=0):
+    for l, u, id in budget(answer.real, trim=0):  # in 2023 the uid is also returned
         print(l, u)
     print()
 
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     all_standards = [ubridge.R4A, ubridge.R4B, ubridge.R4C, ubridge.G1, ubridge.G2, ubridge.C1, ubridge.amp]
     for x in all_standards:
         print(repr(x))
-        for l, u in budget(x, trim=0):
+        for l, u, id in budget(x, trim=0):  # in 2023 the uid is also returned
             print(l, u)
         print()
 
