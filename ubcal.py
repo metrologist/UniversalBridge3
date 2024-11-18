@@ -187,7 +187,7 @@ class RESISTANCE(object):
             hroutput.append(row_list)
 
         # put the 'human readable' output into an excel sheet
-        self.input_data.makeworkbook(hroutput, 'test_results')
+        self.input_data.makeworkbook(hroutput, 'test_results')  # the tab name
 
 if __name__ == "__main__":
     # set up for RESISTANCE class

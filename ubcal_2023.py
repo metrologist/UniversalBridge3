@@ -142,13 +142,13 @@ g1_g2 = (true_g1.x / true_g2.x - 1) * 1e6  # g1/g2 in ppm
 # first the ratio factor
 for x in acrdata:
     by_bz = (sqrt((acrdata[x][1] - zero_acrdata[x][1]) * (acrdata[x][3] - zero_acrdata[x][3]) ) / 1 - 1) * 1e6  # sqrt of the multiplied dials in ppm
-    key_gain_fact[x] = (acrdata[x][4], by_bz, by_bz - g1_g2, acrdata[x][5])  # range and square root of multiplied dials
-
+    # key_gain_fact[x] = (acrdata[x][4], by_bz, by_bz - g1_g2, acrdata[x][5])  # range and square root of multiplied dials (original 2023 calc)
+    key_gain_fact[x] = (acrdata[x][4], by_bz, by_bz + g1_g2, acrdata[x][5])  # range and square root of multiplied dials ( 2024 calc)
 # To proceed further we need to create a calibration file using the latest values of the internal standards.
 # For now this is best created manually. This provides a check of dc resistance against the UB values.
 # This uses cal constants calculated in the first part, but as stored in the calfile...i.e. no GTC link.
 # Use readings from dictionary acr_data and compare with dc results in the key_dcr dictionary.
-calfile = r'ub_dict_cal_2023.csv'
+calfile = r'data_csv\ub_dict_cal_2023.csv'  # 14/5/24 changed to the data_csv directory
 room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambient temperature given in conditions
 ub = UNIVERSALBRIDGE(calfile, room_temperature)
 for x in acrdata:  # calculate the impedance and admittance
