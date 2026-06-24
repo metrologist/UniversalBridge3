@@ -1,7 +1,7 @@
-"""
-For interacting with calibration information and bridge readings that have been stored in .xlsx files.
-It is derived from ExcelPython.py that was used with CT calibrations.
-"""
+# """
+# For interacting with calibration information and bridge readings that have been stored in .xlsx files.
+# It is derived from ExcelPython.py that was used with CT calibrations.
+# """
 
 from openpyxl import Workbook, load_workbook
 from warnings import simplefilter

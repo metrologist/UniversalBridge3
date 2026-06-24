@@ -201,7 +201,7 @@ class UNIVERSALBRIDGE(object):
         """
         The minimum uncertainty that can be quoted in a report under the CIPM MRA is determined by the officially
         recognised CMCs. These CMCs can only be an approximation to what is correctly calculated by bridge_value.
-        :param ubrange: 3Y, 7Z style two character names for the rangee
+        :param ubrange: 3Y, 7Z style two character names for the range
         :param dialA: the resistance 7 dials
         :param dialB:  the reactance 6 dials
         :param frequency: in Hz

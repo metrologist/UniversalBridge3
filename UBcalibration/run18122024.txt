@@ -1,0 +1,123 @@
+C:\Users\Lab\miniconda3\envs\capsmeasure\python.exe C:/Users/Lab/PycharmProjects/UBcalibration/DMM3458MRS.py
+Resistance measurement
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:Fluke short 410590-A
+('Resistor Fluke short 410590-A measured by HP3458A with ID number 5',)
+('mains frequency =', ' 50.0179121E+00')
+('temperature =', '32.4')
+Reset before measurement starting
+Range?:1e-12
+('Range?:', '1e-12', 'Item?:', 'Fluke short 410590-A')
+('Trail1', -2.003863898e-05, 'Trail2', -1.440745194e-05)
+('at', 'Wed Dec 18 09:11:30 2024', 'Fluke short 410590-A', 'reading is:')
+('Resistance_mean:', -1.5349318568411e-05)
+('Resistance_stdevp:', 1.1173066422713234e-05)
+('Time taken = ', 4.744263486067454, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:SR104 StdR (SN:109006)
+('Resistor SR104 StdR (SN:109006) measured by HP3458A with ID number 5',)
+('mains frequency =', ' 49.8803953E+00')
+('temperature =', '32.5')
+Reset before measurement starting
+Range?:1e4
+('Range?:', '1e4', 'Item?:', 'SR104 StdR (SN:109006)')
+('Trail1', 10000.01212, 'Trail2', 10000.01562)
+('at', 'Wed Dec 18 11:32:53 2024', 'SR104 StdR (SN:109006)', 'reading is:')
+('Resistance_mean:', 10000.014760799999)
+('Resistance_stdevp:', 0.0011153797922320583)
+('Time taken = ', 4.743735567728678, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:SR04TS(temperature Sensor)
+('Resistor SR04TS(temperature Sensor) measured by HP3458A with ID number 5',)
+('mains frequency =', ' 50.0511939E+00')
+('temperature =', '32.5')
+Reset before measurement starting
+Range?:1e4
+('Range?:', '1e4', 'Item?:', 'SR04TS(temperature Sensor)')
+('Trail1', 9978.674633, 'Trail2', 9978.687287)
+('at', 'Wed Dec 18 11:53:29 2024', 'SR04TS(temperature Sensor)', 'reading is:')
+('Resistance_mean:', 3e+36)
+('Resistance_stdevp:', 1.714466079977653e+37)
+('Time taken = ', 4.685083440939585, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:SR102 StdR (SN:J2-1824663)
+('Resistor SR102 StdR (SN:J2-1824663) measured by HP3458A with ID number 5',)
+('mains frequency =', ' 50.0536566E+00')
+('temperature =', '32.5')
+Reset before measurement starting
+Range?:1e2
+('Range?:', '1e2', 'Item?:', 'SR102 StdR (SN:J2-1824663)')
+('Trail1', 100.0003069, 'Trail2', 100.0003006)
+('at', 'Wed Dec 18 12:07:27 2024', 'SR102 StdR (SN:J2-1824663)', 'reading is:')
+('Resistance_mean:', 100.000394469)
+('Resistance_stdevp:', 0.00010458458535481414)
+('Time taken = ', 4.744111335277557, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:SR102 TS(temperature Sensor) (SN:J2-1824663)
+('Resistor SR102 TS(temperature Sensor) (SN:J2-1824663) measured by HP3458A with ID number 5',)
+('mains frequency =', ' 49.9624763E+00')
+('temperature =', '32.5')
+Reset before measurement starting
+1Range?:1e2
+('Range?:', '1e2', 'Item?:', 'SR102 TS(temperature Sensor) (SN:J2-1824663)')
+('Trail1', 100.000437, 'Trail2', 100.0003747)
+('at', 'Wed Dec 18 12:19:45 2024', 'SR102 TS(temperature Sensor) (SN:J2-1824663)', 'reading is:')
+('Resistance_mean:', 100.00039415799998)
+('Resistance_stdevp:', 0.0001087501447158916)
+('Time taken = ', 4.743297505378723, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:SR102 TS(temperature Sensor) (SN:J2-1824663)
+('Resistor SR102 TS(temperature Sensor) (SN:J2-1824663) measured by HP3458A with ID number 5',)
+('mains frequency =', ' 50.0799862E+00')
+('temperature =', '32.6')
+Reset before measurement starting
+Range?:1e2
+('Range?:', '1e2', 'Item?:', 'SR102 TS(temperature Sensor) (SN:J2-1824663)')
+('Trail1', 99.76903449, 'Trail2', 99.76879075)
+('at', 'Wed Dec 18 12:48:02 2024', 'SR102 TS(temperature Sensor) (SN:J2-1824663)', 'reading is:')
+('Resistance_mean:', 99.76945311740002)
+('Resistance_stdevp:', 0.0003371040251572207)
+('Time taken = ', 4.741455698013306, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:TC-4
+('Resistor TC-4 measured by HP3458A with ID number 5',)
+('mains frequency =', ' 50.0145561E+00')
+('temperature =', '32.6')
+Reset before measurement starting
+Range?:1e3
+('Range?:', '1e3', 'Item?:', 'TC-4')
+('Trail1', 1e+38, 'Trail2', 1e+38)
+('at', 'Wed Dec 18 13:35:23 2024', 'TC-4', 'reading is:')
+('Resistance_mean:', 1e+38)
+('Resistance_stdevp:', 0.0)
+('Time taken = ', 2.6352267185846965, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quityes
+('GPIB0::22::INSTR',)
+Item?:TC-4
+('Resistor TC-4 measured by HP3458A with ID number 5',)
+('mains frequency =', ' 49.9137434E+00')
+('temperature =', '32.6')
+Reset before measurement starting
+Range?:1e3
+('Range?:', '1e3', 'Item?:', 'TC-4')
+('Trail1', 1000.031368, 'Trail2', 1000.03136)
+('at', 'Wed Dec 18 13:42:04 2024', 'TC-4', 'reading is:')
+('Resistance_mean:', 1000.0311803600001)
+('Resistance_stdevp:', 0.00018821573265810973)
+('Time taken = ', 4.743581064542135, 'minutes')
+('----------------',)
+Start to measure a resistor? yes to confirm, others to quit

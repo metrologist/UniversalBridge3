@@ -1,0 +1,189 @@
+Resistance measurement
+5
+HP3458A
+mains frequency =, 50.0192763E+00
+temperature =,33.1
+Reset before measurement starting
+Range?:,open zero
+Item?:,open zero
+Trail1,-33.57603052
+Trail2,-30.65820492
+Result
+Time:,Mon Feb 20 10:34:17 2023
+open zero reading are
+Resistance_mean:,32191675.541353356
+Resistance_stdevp:,78623237.20895927
+---------
+Resistance measurement
+5
+HP3458A
+mains frequency =, 50.0443601E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e10
+Item?:,open zero 2
+Trail1,-15.63627274
+Trail2,-181.8660306
+Result
+Time:,Mon Feb 20 10:41:33 2023
+open zero 2 reading are
+Resistance_mean:,107227209.8926963
+Resistance_stdevp:,110021995.61714473
+Resistance measurement
+5
+HP3458A
+mains frequency =, 50.0173692E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e10
+Item?:,open zero3
+Trail1,143.1689666
+Trail2,89.94115339
+Result
+Time:,Mon Feb 20 10:44:58 2023
+open zero3 reading are
+Resistance_mean:,107775979.21417396
+Resistance_stdevp:,110614914.44392492
+5
+HP3458A
+mains frequency =, 49.9780050E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e10
+Item?:,open zero4
+Trail1,-101.6345499
+Trail2,8.752962376
+Result
+Time:,Mon Feb 20 10:46:25 2023
+open zero4 reading are
+Resistance_mean:,107620347.28501761
+Resistance_stdevp:,110426619.25131926
+Resistance measurement
+5
+HP3458A
+mains frequency =, 49.9796828E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e100
+Item?:,open zero5
+Trail1,-103.4895306
+Trail2,-366.9882865
+Result
+Time:,Mon Feb 20 10:55:36 2023
+open zero5 reading are
+Resistance_mean:,-2110071.388633035
+Resistance_stdevp:,3968527.866365517
+Resistance measurement
+5
+HP3458A
+mains frequency =, 49.9501676E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e3
+Item?:,R1
+Trail1,-1.790985831e-05
+Trail2,-4.593422307e-06
+Resistance measurement
+HP3458A
+mains frequency =, 50.0092423E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1e4
+Item?:,r1
+Trail1,5.501169142e-06
+Trail2,1.405189944e-06
+0,-2.871787291e-05
+0,-3.438076252e-05
+1,-2.081466979e-05
+1,-8.038975124e-06
+2,-6.336150501e-06
+2,-1.673700132e-06
+3,-3.028254476e-05
+3,-4.013259263e-05
+4,8.222266935e-07
+4,-2.737267411e-05
+5,2.95169539e-05
+5,-3.947556144e-06
+6,-8.002662447e-06
+6,-5.235386647e-06
+7,4.326898811e-05
+7,6.553186996e-06
+8,-4.084663666e-05
+8,3.894644514e-05
+9,1.035281564e-05
+9,5.97830221e-05
+10,-4.290025401e-05
+10,-0.0001653335103
+11,4.45021707e-05
+11,0.001937324841
+12,0.0002326796891
+12,-0.0008738600871
+13,0.0002122632613
+13,0.2408592841
+14,-0.006174644772
+14,8.697966119e-05
+15,-2.433607645e-05
+15,-0.00146688726
+16,-0.001399160289
+16,68.0744057
+17,7.040489304
+17,-89.13020246
+18,176.805692
+18,-58.12725376
+19,-45.85406103
+19,51.00683063
+A_mean:,6.899245881908845
+A_stdevp:,41.3333205025699
+B_mean:,-1.3967928940624144
+B_stdevp:,41.3333205025699
+Result
+Time:,Mon Feb 20 11:05:12 2023
+A_mean:,6.899245881908845
+A_stdevp:,41.3333205025699
+B_mean:,-1.3967928940624144
+B_stdevp:,31.220632107541608
+Resistance measurement
+5
+HP3458A
+mains frequency =, 50.0029672E+00
+temperature =,33.2
+Reset before measurement starting
+Range?:,1000
+Item?:,r1
+Trail1,100001.8668
+Trail2,100001.8827
+Result
+Time:,Mon Feb 20 11:07:10 2023
+r1 reading are
+Resistance_mean:,100001.91012500001
+Resistance_stdevp:,0.008534997610113023
+end of the measurement
+Resistance measurement
+5
+HP3458A
+mains frequency =, 49.9344822E+00
+temperature =,33.3
+Reset before measurement starting
+Range?:,1.2E6
+Item?:,
+Trail1,100001.9382
+Trail2,100001.9763
+Result
+Time:,Mon Feb 20 12:50:04 2023
+ reading are
+Resistance_mean:,100001.9241
+Resistance_stdevp:,0.0339869169885706
+5
+HP3458A
+mains frequency =, 49.9633712E+00
+temperature =,33.3
+Reset before measurement starting
+Range?:,"1.2E5,.00125"
+Item?:,
+Trail1,100001.9291
+Trail2,100001.9133
+Result
+Time:,Mon Feb 20 12:52:34 2023
+ reading are
+Resistance_mean:,100001.92355
+Resistance_stdevp:,0.06905092323822774

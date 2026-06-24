@@ -1,0 +1,20 @@
+Resistor SR104 StdsR SN:109006 measured by HP3458A with ID number 5
+mains frequency =, 50.0278221E+00
+temperature =,33.3
+Range?:,1.2e4,Item?:,SR104 StdsR SN:109006
+Trail1,10000.00598,Trail2,10000.00788
+at,Mon Feb 20 16:03:37 2023,SR104 StdsR SN:109006,reading is:
+Resistance_mean:,10000.0148145
+Resistance_stdevp:,0.0018671792451739528
+Time taken = ,3.332639674345652,minutes
+----------------
+Resistor SR104 Temp_sensor SN109006 measured by HP3458A with ID number 5
+mains frequency =, 50.0313593E+00
+temperature =,33.3
+Range?:,1.2e4,Item?:,SR104 Temp_sensor SN109006
+Trail1,9984.958968,Trail2,9984.961338
+at,Mon Feb 20 16:15:02 2023,SR104 Temp_sensor SN109006,reading is:
+Resistance_mean:,9984.960324170002
+Resistance_stdevp:,0.0021670077776521353
+Time taken = ,3.316780924797058,minutes
+----------------

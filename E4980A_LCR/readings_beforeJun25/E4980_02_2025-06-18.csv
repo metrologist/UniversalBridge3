@@ -1,0 +1,11 @@
+lcr name:,KeySight E4980A
+Name and description of Device under test: ,Sullivan Coaxial 4T trail
+GPIB source:,<bound method MessageBasedResource.read of <'GPIBInstrument'('GPIB0::17::INSTR')>>
+2025-06-18,15:48:18
+lcr name:,KeySight E4980A
+Name and description of Device under test: ,trail
+GPIB source:,<bound method MessageBasedResource.read of <'GPIBInstrument'('GPIB0::17::INSTR')>>
+2025-06-18,15:49:53
+select the freq range 90% - 110%,"[1432.4, 1512.4, 1591.5, 1670.8, 1749.6]"
+1432.4,9.9e+37,9.9e+37
+1432.4,9.9e+37,9.9e+37

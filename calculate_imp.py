@@ -276,12 +276,12 @@ class UUT(object):
         print('Budget for', self.data_block[line_no][0], self.data_block[line_no][1])
         item = results[line_no]
         print(repr(item[0]))
-        for l, u in budget(item[0], trim=0):
-            print(l, '\t\t\t', u)
+        for x in budget(item[0], trim=0):
+            print(x[0], '\t\t\t', x[1])
         print()
         print(repr(item[1]))
-        for l, u in budget(item[1], trim=0):
-            print(l, '\t\t\t', u)
+        for x in budget(item[1], trim=0):
+            print(x[0], '\t\t\t', x[1])
         print()
         return
 
@@ -302,6 +302,75 @@ class UUT(object):
                 calc_tand = 0
             tan_deltas.append((caps[i][0], caps[i][1], calc_tand * 1e3))  # 1e3 converts to miilliradians
         return tan_deltas
+
+    def muirhead_zeros(self, y_corrected):
+        """
+        Returns list of muirhead capacitor values with jig zero subtracted
+        Includes a 0.05 pF standard uncertainty in jig definition
+        y_corrected: capacitance values that have had coaxial zeros subtracted
+        """
+        jig_zero = ureal(0, 0.05e-12, 10, 'jig_zero')  # 0.05 pF 1 sigma
+        names = ['M1', 'M0.1', 'M0.01', 'M0.001', 'M0.0005']
+        muirhead_caps = []
+        for i in range(len(y_corrected)):
+            if self.data_block[i][0] in names:
+                for j in range(len(y_corrected)):
+                    if self.data_block[j][0] == self.data_block[i][0] + 'zero':  # e.g. 'M1zero, 'M0.0005zero'
+                        # print(repr(y_corrected[i][0]))
+                        # thing = jig_zero + y_corrected[i][0]
+                        jig_corrected = (
+                            y_corrected[i][0] - y_corrected[j][0], jig_zero + y_corrected[i][1] - y_corrected[j][1])
+                        muirhead_caps.append(jig_corrected)
+        return muirhead_caps
+
+    def tandelta(self, caps):
+        """
+        assumes 10,000 rad/s and returns G/wC in mrad
+        also assumes a 0.005 ohm standard uncertainty in series connection
+        caps:  is the list of jig_corrected muirhead capacitor values
+        """
+        w = 1e4
+        seriesR = 0.005
+        tan_deltas = []
+        for i in range(len(caps)):
+            seriesG = ureal(0, (w * caps[i][1].x) ** 2 * seriesR, 10, 'seriesG')
+            calc_tand = atan((caps[i][0] + seriesG) / (caps[i][1] * w))
+            tan_deltas.append(calc_tand * 1e3)
+        return tan_deltas
+
+    def muirhead_output(self, caps, tandeltas):
+        """
+        Creates spreadsheet with final report values, in F and mrad
+        caps: is jig corrected capacitances from muirheadzeros
+        tandeltas:  is tan delta values from muirhead_tand
+        """
+        for_tand = excel3.CALCULATOR(self.input_workbook, 'muirhead_tand.xlsx')  # alternative output spreadsheet
+        # now put all info in spreadsheet
+        data_block = [[], [], [], [], []]
+        for i in range(len(caps)):
+            rpart = caps[i][0]
+            xpart = caps[i][1]
+            # first calculate coverage factors
+            kr = k_factor(rpart.df)
+            kx = k_factor(xpart.df)
+            # then expanded unertainties
+            xU = xpart.u * kx
+            rU = rpart.u * kr
+            data_block[i].append(xpart.x)
+            data_block[i].append(xU)  # expanded uncertainty
+            data_block[i].append(kx)
+            data_block[i].append(rpart.x)
+            data_block[i].append(rU)  # expanded uncertainty
+            data_block[i].append(kr)
+            # now for loss angle
+            td = tandeltas[i].x
+            utd = tandeltas[i].u
+            ktd = k_factor(tandeltas[i].df)
+            Utd = ktd * utd
+            data_block[i].append(td)
+            data_block[i].append(Utd)
+            data_block[i].append(ktd)
+        for_tand.makeworkbook(data_block, 'muirhead')
 
 if __name__ == "__main__":
     calfile = r'ubdict_dec_2019.csv'

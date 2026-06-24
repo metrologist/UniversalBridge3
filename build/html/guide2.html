@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Code &#8212; Universal Bridge 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Universal Bridge 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Python Code</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="python-code">
+<h1>Python Code<a class="headerlink" href="#python-code" title="Link to this heading">¶</a></h1>
+<p>Comment strings extracted from the code.</p>
+<section id="module-excel3">
+<span id="excel3-py"></span><h2>excel3.py<a class="headerlink" href="#module-excel3" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="excel3.CALCULATOR">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">excel3.</span></span><span class="sig-name descname"><span class="pre">CALCULATOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel3.CALCULATOR" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="excel3.CALCULATOR.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel3.CALCULATOR.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>‘source’ is the spreadsheet with data and ‘output’ is the name of the
+spreadsheet the results are placed in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="excel3.CALCULATOR.extract_column">
+<span class="sig-name descname"><span class="pre">extract_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_finish</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel3.CALCULATOR.extract_column" title="Link to this definition">¶</a></dt>
+<dd><p>Row and column numbers follow R1C1==’A1’
+‘block is in format of self.getdata_block
+For extracting specific table columns after having read an entire sheet with get_datablock</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="excel3.CALCULATOR.getdata_block">
+<span class="sig-name descname"><span class="pre">getdata_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_range</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel3.CALCULATOR.getdata_block" title="Link to this definition">¶</a></dt>
+<dd><p>‘datasheet’ is the name of the calc worksheet
+‘block_range’ is a 4 element list [start row, finish row, start column, finish column]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="excel3.CALCULATOR.makeworkbook">
+<span class="sig-name descname"><span class="pre">makeworkbook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">this_title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel3.CALCULATOR.makeworkbook" title="Link to this definition">¶</a></dt>
+<dd><p>‘list_set’ is a list of lists that are each an excel row.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ubridge3">
+<span id="ubridge3-py"></span><h2>ubridge3.py<a class="headerlink" href="#module-ubridge3" title="Link to this heading">¶</a></h2>
+<p>This is an update to Python 3 that uses the second order multiplication branch of GTC from the MSL repository.
+ubridge3.py creates a UNIVERSALBRIDGE class that includes inbuilt uncertainties due to the bridge design and takes in
+updated calibration data for the bridge, including calibration uncertainties.
+bridge_value() takes dial readings from the Universal Impedance Bridge and returns the corrected impedance value.
+All calibration work with the UB should use this module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ubridge3.</span></span><span class="sig-name descname"><span class="pre">UNIVERSALBRIDGE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE" title="Link to this definition">¶</a></dt>
+<dd><p>All methods related to the universal bridge are held in this class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.available_ranges">
+<span class="sig-name descname"><span class="pre">available_ranges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.available_ranges" title="Link to this definition">¶</a></dt>
+<dd><p>Prints out the ranges on the Universal Impedance Bridge. For information only.
+Useful to cross-check that main calculation is correct at full-scale dial settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.bridge_value">
+<span class="sig-name descname"><span class="pre">bridge_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ubrange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialA</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.bridge_value" title="Link to this definition">¶</a></dt>
+<dd><p>ubrange as usual 5Z or 2Y format
+dialA is the resistance dial, dialB is the L/C dial
+returns either impedance or admittance in ohm (F, H, S); i.e. no assumed multiplier
+note that the wC1 can have w dropped to let results be directly in L or F, but could have 2nd order effect
+with real/imag interaction</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.cmc_uncert">
+<span class="sig-name descname"><span class="pre">cmc_uncert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ubrange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialA</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dialB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.cmc_uncert" title="Link to this definition">¶</a></dt>
+<dd><p>The minimum uncertainty that can be quoted in a report under the CIPM MRA is determined by the officially
+recognised CMCs. These CMCs can only be an approximation to what is correctly calculated by bridge_value.
+:param ubrange: 3Y, 7Z style two character names for the rangee
+:param dialA: the resistance 7 dials
+:param dialB:  the reactance 6 dials
+:param frequency: in Hz
+:return: a tuple of real and reactive uncertainties, (g_uncert, c_uncert) or (ronly_uncert, r_uncert, l_uncert),
+in base units. The ronly_uncert is for a resistor, while the r_uncert is for the resistive part of an inductor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.get_csv_data">
+<span class="sig-name descname"><span class="pre">get_csv_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.get_csv_data" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> – the csv file formatted to hold all the calibration dictionaries</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>four dictionaries caldata, acdc, tempcoeffs, stability, ivd</p>
+</dd>
+</dl>
+<p>The caldata dictionary contains the calibrated component values, acdc contains frequency dependence uncertainty,
+tempcoeffs has estimates of termperature coefficients, stability has uncertainties for time dependence and ivd
+has linearity estimates for the two main inductive voltage dividers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubridge3.UNIVERSALBRIDGE.unit_scale">
+<span class="sig-name descname"><span class="pre">unit_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ubrange</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubridge3.UNIVERSALBRIDGE.unit_scale" title="Link to this definition">¶</a></dt>
+<dd><p>range is entered as ‘4Z’ and a dial factor is returned in a tuple with the unit
+for internal use with available_ranges</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ubcal">
+<span id="ubcal-py"></span><h2>ubcal.py<a class="headerlink" href="#module-ubcal" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ubcal.</span></span><span class="sig-name descname"><span class="pre">RESISTANCE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datafile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE" title="Link to this definition">¶</a></dt>
+<dd><p>Calibration of the universal bridge essentially relies on calibrating the value of the internal resistors at dc with
+the assumption of negligible ac-dc difference of the resistors. The Thompson resistors are of known phase angle and
+are used to estimate the phase defect in the bridge, in essence the correction required to UB measurements of
+resistor capacitance or inductance. An external set of resistors is also calibrated at dc and used to confirm the
+accuracy of all the ranges.
+Methods for using a Hamon resistance box with a resistance meter to establish the dc values of resistors are in this
+class together with some methods for gathering data from an Excel spreadsheet.
+Note that all resistance values are in ohm regardless of whether the standard is labelled G or R.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datafile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>calfile</strong> – a csv file that has previous calibration constants for the ub</p></li>
+<li><p><strong>datafile</strong> – excel workbook that contains the dmm and ub manual measurements</p></li>
+<li><p><strong>outputfile</strong> – an excel workbook that will contain the calculated outputs</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE.meter_corrn">
+<span class="sig-name descname"><span class="pre">meter_corrn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE.meter_corrn" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r1</strong> – true value of resistor</p></li>
+<li><p><strong>r2</strong> – meter reading for resistor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>correction to meter reading in ohm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE.phase_error">
+<span class="sig-name descname"><span class="pre">phase_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_zero</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_zero</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE.phase_error" title="Link to this definition">¶</a></dt>
+<dd><p>uses the known parallel capacitance of a Thompson phase angle standard
+and L = -C * R ** 2 /(1 + (w *  C * R) ** 2) give the expected inductance from the known capacitance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> – the a, b readings in z mode and the known capacitance in pF</p></li>
+<li><p><strong>y</strong> – the a, b readings in y mode and the known capacitance in pF</p></li>
+<li><p><strong>z_zero</strong> – z_zero: the a, b readings for a zero in z mode</p></li>
+<li><p><strong>y_zero</strong> – y_zero: the a, b readings for z zero in y mode</p></li>
+<li><p><strong>freq</strong> – frequency in Hz at which the measurements were made</p></li>
+<li><p><strong>rnge</strong> – integer range value [1..7]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>range number, frequency in Hz, capacitance correction, inductance correction, both in ppm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE.series_parallel">
+<span class="sig-name descname"><span class="pre">series_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE.series_parallel" title="Link to this definition">¶</a></dt>
+<dd><p>Gives the correction to the series parallel value with 9 resistor in term of the parallel value of all 10 resistors.
+Formula taken from the SR1010 handbook, page 2-13, d9av - d10av =0.1(d9av - d10). See page 24 of MSLT.E.023.07
+:param r1: the true value of the resistance box in parallel (all 10)
+:param r2: the measured value of the resistance box in series-parallel with 9 resistors
+:param r3: the measured value of the 10th resistor not used in s-p, measured with the same meter as r2
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ubcal.RESISTANCE.temp_sr104">
+<span class="sig-name descname"><span class="pre">temp_sr104</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sens</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ubcal.RESISTANCE.temp_sr104" title="Link to this definition">¶</a></dt>
+<dd><p>uses the value of the sensor resistor to calculate the correction that needs to be applied to the 20 degree value
+of SR104
+:param sens: value of the sense resistor
+:return: correction in ohm</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-calculate_imp">
+<span id="calculate-imp-py"></span><h2>calculate_imp.py<a class="headerlink" href="#module-calculate_imp" title="Link to this heading">¶</a></h2>
+<p>calculate_imp.py calculates immittances of components measured with the Universal Impedance Bridge</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="calculate_imp.UUT">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">calculate_imp.</span></span><span class="sig-name descname"><span class="pre">UUT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bridge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_workbook</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_in_sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_descriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_workbook</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_out_sheet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT" title="Link to this definition">¶</a></dt>
+<dd><p>A set of immittances that will be calibrated using the Universal Bridge. Bridge readings, environmental conditions
+and sensitivity coefficients are gathered in a spreadsheet. Calculated calibration results will be returned also in
+a spreadsheet for preparing a full report.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bridge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_workbook</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_in_sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_descriptor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_workbook</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_out_sheet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.calculate_values">
+<span class="sig-name descname"><span class="pre">calculate_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">room_temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">this_ubridge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.calculate_values" title="Link to this definition">¶</a></dt>
+<dd><p>Separates out all readings labelled ‘coax zero’ of which it is assumed that there is one and only one for each
+range used. These can subsequently be subtracted.
+:param room_temperature:
+:param this_ubridge: UNIVERSALBRIDGE object
+:return: a list of calculated values including the calculated zeros and a list of calculated zeros</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.cap_tand">
+<span class="sig-name descname"><span class="pre">cap_tand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.cap_tand" title="Link to this definition">¶</a></dt>
+<dd><p>Returns G/wC in mrad. Note that this is for two or four terminal-pair capacitors
+where there is no need to consider variability in series resistance.
+:param caps: ist of zero_corrected coax capacitor values
+:return: caps with tand delta (in milliradians) added as the third component</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.create_output">
+<span class="sig-name descname"><span class="pre">create_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_corrected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmcs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.create_output" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a table of calculated results in the output spreadsheet for UUT
+:param y_corrected: allows for 2 (r and x) or 3 (r, x and tand) versions of y_corrected.
+:param cmcs: as calculated in cmc_check
+:return: creates the output spreadsheet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.main_zero">
+<span class="sig-name descname"><span class="pre">main_zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_uncert</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.main_zero" title="Link to this definition">¶</a></dt>
+<dd><p>Specified for a 2-term cap box where a value is measured for all dials set to zero. This requires a
+measurement with the box set to zero followed by subtracting the value measured with the box removed
+from the measurement cables.
+:param all_values: the list as returned by calculate_values
+:param zero_uncert: ureal uncertainty for definition and repeatability of box zero
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.muirhead_output">
+<span class="sig-name descname"><span class="pre">muirhead_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tandeltas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.muirhead_output" title="Link to this definition">¶</a></dt>
+<dd><p>Creates spreadsheet with final report values, in F and mrad
+caps: is jig corrected capacitances from muirheadzeros
+tandeltas:  is tan delta values from muirhead_tand</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.muirhead_zeros">
+<span class="sig-name descname"><span class="pre">muirhead_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_corrected</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.muirhead_zeros" title="Link to this definition">¶</a></dt>
+<dd><p>Returns list of muirhead capacitor values with jig zero subtracted
+Includes a 0.05 pF standard uncertainty in jig definition
+y_corrected: capacitance values that have had coaxial zeros subtracted</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.subtract_box_zeros">
+<span class="sig-name descname"><span class="pre">subtract_box_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vernier_uncert</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resist_uncert</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.subtract_box_zeros" title="Link to this definition">¶</a></dt>
+<dd><p>all_values are the calculated values after correcting for coax zeros. For a capacitance box the change values
+need the box-zero (as measured on the same range) subtracted.
+:param all_values:
+:param exclude: list of labels that do not have the box_zero subtracted
+:param vernier_uncert: uncertainty due to setting of vernier dial, dial identified by ‘E’.
+:param resist_uncert: uncertainty due to varying series resistance in connection to the box.
+:return: a list of change values from a dial setting of zero to the indicated setting</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.subtract_coax_zeros">
+<span class="sig-name descname"><span class="pre">subtract_coax_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zeros</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.subtract_coax_zeros" title="Link to this definition">¶</a></dt>
+<dd><p>Subtracts the coax zeros from all values and so also checks that the coax zeros also subtract
+:param all_items:
+:param zeros:
+:return: a list of zero corrected values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.subtract_twist_zeros">
+<span class="sig-name descname"><span class="pre">subtract_twist_zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.subtract_twist_zeros" title="Link to this definition">¶</a></dt>
+<dd><p>Specific to the muirhead decade inductors defined by the change from zero setting (just twisted wires
+shorted by the zero switch position) to the selected switch position. The decision on i&lt;11 is a crude
+way of identifying the correct zero for each of the two switchable inductors being calibrated.
+:param all_items: a list of four-element arrays containing [label, range, frequency, ureal(r), ureal(x)]
+:return: zero corrected list of (ureal(r), ureal(x))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="calculate_imp.UUT.tandelta">
+<span class="sig-name descname"><span class="pre">tandelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculate_imp.UUT.tandelta" title="Link to this definition">¶</a></dt>
+<dd><p>assumes 10,000 rad/s and returns G/wC in mrad
+also assumes a 0.005 ohm standard uncertainty in series connection
+caps:  is the list of jig_corrected muirhead capacitor values</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Python Code</a><ul>
+<li><a class="reference internal" href="#module-excel3">excel3.py</a><ul>
+<li><a class="reference internal" href="#excel3.CALCULATOR"><code class="docutils literal notranslate"><span class="pre">CALCULATOR</span></code></a><ul>
+<li><a class="reference internal" href="#excel3.CALCULATOR.__init__"><code class="docutils literal notranslate"><span class="pre">CALCULATOR.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#excel3.CALCULATOR.extract_column"><code class="docutils literal notranslate"><span class="pre">CALCULATOR.extract_column()</span></code></a></li>
+<li><a class="reference internal" href="#excel3.CALCULATOR.getdata_block"><code class="docutils literal notranslate"><span class="pre">CALCULATOR.getdata_block()</span></code></a></li>
+<li><a class="reference internal" href="#excel3.CALCULATOR.makeworkbook"><code class="docutils literal notranslate"><span class="pre">CALCULATOR.makeworkbook()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ubridge3">ubridge3.py</a><ul>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE</span></code></a><ul>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.__init__"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.available_ranges"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.available_ranges()</span></code></a></li>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.bridge_value"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.bridge_value()</span></code></a></li>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.cmc_uncert"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.cmc_uncert()</span></code></a></li>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.get_csv_data"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.get_csv_data()</span></code></a></li>
+<li><a class="reference internal" href="#ubridge3.UNIVERSALBRIDGE.unit_scale"><code class="docutils literal notranslate"><span class="pre">UNIVERSALBRIDGE.unit_scale()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ubcal">ubcal.py</a><ul>
+<li><a class="reference internal" href="#ubcal.RESISTANCE"><code class="docutils literal notranslate"><span class="pre">RESISTANCE</span></code></a><ul>
+<li><a class="reference internal" href="#ubcal.RESISTANCE.__init__"><code class="docutils literal notranslate"><span class="pre">RESISTANCE.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#ubcal.RESISTANCE.meter_corrn"><code class="docutils literal notranslate"><span class="pre">RESISTANCE.meter_corrn()</span></code></a></li>
+<li><a class="reference internal" href="#ubcal.RESISTANCE.phase_error"><code class="docutils literal notranslate"><span class="pre">RESISTANCE.phase_error()</span></code></a></li>
+<li><a class="reference internal" href="#ubcal.RESISTANCE.series_parallel"><code class="docutils literal notranslate"><span class="pre">RESISTANCE.series_parallel()</span></code></a></li>
+<li><a class="reference internal" href="#ubcal.RESISTANCE.temp_sr104"><code class="docutils literal notranslate"><span class="pre">RESISTANCE.temp_sr104()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-calculate_imp">calculate_imp.py</a><ul>
+<li><a class="reference internal" href="#calculate_imp.UUT"><code class="docutils literal notranslate"><span class="pre">UUT</span></code></a><ul>
+<li><a class="reference internal" href="#calculate_imp.UUT.__init__"><code class="docutils literal notranslate"><span class="pre">UUT.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.calculate_values"><code class="docutils literal notranslate"><span class="pre">UUT.calculate_values()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.cap_tand"><code class="docutils literal notranslate"><span class="pre">UUT.cap_tand()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.create_output"><code class="docutils literal notranslate"><span class="pre">UUT.create_output()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.main_zero"><code class="docutils literal notranslate"><span class="pre">UUT.main_zero()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.muirhead_output"><code class="docutils literal notranslate"><span class="pre">UUT.muirhead_output()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.muirhead_zeros"><code class="docutils literal notranslate"><span class="pre">UUT.muirhead_zeros()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.subtract_box_zeros"><code class="docutils literal notranslate"><span class="pre">UUT.subtract_box_zeros()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.subtract_coax_zeros"><code class="docutils literal notranslate"><span class="pre">UUT.subtract_coax_zeros()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.subtract_twist_zeros"><code class="docutils literal notranslate"><span class="pre">UUT.subtract_twist_zeros()</span></code></a></li>
+<li><a class="reference internal" href="#calculate_imp.UUT.tandelta"><code class="docutils literal notranslate"><span class="pre">UUT.tandelta()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/guide2.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Universal Bridge 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Python Code</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Keith Jones.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    </div>
+  </body>
+</html>

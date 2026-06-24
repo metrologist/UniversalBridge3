@@ -1,0 +1,101 @@
+Auto Calibration
+HP3458A
+mains frequency =, 50.1033737E+00
+temperature =,32.5
+ACAL starting
+ACAL finished
+Time taken = ,16.05004944006602,minutes
+temperature =,32.5
+Cal done
+Wed Dec 18 08:41:38 2024
+Resistor Fluke short 410590-A measured by HP3458A with ID number 5
+mains frequency =, 50.0179121E+00
+temperature =,32.4
+Range?:,1e-12,Item?:,Fluke short 410590-A
+Trail1,-2.003863898e-05,Trail2,-1.440745194e-05
+at,Wed Dec 18 09:11:30 2024,Fluke short 410590-A,reading is:
+Resistance_mean:,-1.5349318568411e-05
+Resistance_stdevp:,1.1173066422713234e-05
+Time taken = ,4.744263486067454,minutes
+----------------
+Resistor SR104 StdR (SN:109006) measured by HP3458A with ID number 5
+mains frequency =, 49.8803953E+00
+temperature =,32.5
+Range?:,1e4,Item?:,SR104 StdR (SN:109006)
+Trail1,10000.01212,Trail2,10000.01562
+at,Wed Dec 18 11:32:53 2024,SR104 StdR (SN:109006),reading is:
+Resistance_mean:,10000.014760799999
+Resistance_stdevp:,0.0011153797922320583
+Time taken = ,4.743735567728678,minutes
+----------------
+Resistor SR04TS(temperature Sensor) measured by HP3458A with ID number 5
+mains frequency =, 50.0511939E+00
+temperature =,32.5
+Range?:,1e4,Item?:,SR04TS(temperature Sensor)
+Trail1,9978.674633,Trail2,9978.687287
+at,Wed Dec 18 11:53:29 2024,SR04TS(temperature Sensor),reading is:
+Resistance_mean:,3e+36
+Resistance_stdevp:,1.714466079977653e+37
+Time taken = ,4.685083440939585,minutes
+----------------
+Resistor SR102 StdR (SN:J2-1824663) measured by HP3458A with ID number 5
+mains frequency =, 50.0536566E+00
+temperature =,32.5
+Range?:,1e2,Item?:,SR102 StdR (SN:J2-1824663)
+Trail1,100.0003069,Trail2,100.0003006
+at,Wed Dec 18 12:07:27 2024,SR102 StdR (SN:J2-1824663),reading is:
+Resistance_mean:,100.000394469
+Resistance_stdevp:,0.00010458458535481414
+Time taken = ,4.744111335277557,minutes
+----------------
+Resistor TC-4 Teflon 4-wire measured by HP3458A with ID number 5
+mains frequency =, 50.1198574E+00
+temperature =,32.5
+Range?:,1e3,Item?:,TC-4 Teflon 4-wire
+Trail1,1000.031563,Trail2,1000.031426
+at,Wed Dec 18 15:16:09 2024,TC-4 Teflon 4-wire,reading is:
+Resistance_mean:,1000.0311927299999
+Resistance_stdevp:,0.00015107994104333674
+Time taken = ,4.744711418946584,minutes
+----------------
+Resistor TC-4 Teflon LEMO current 4-wire Teflon measured by HP3458A with ID number 5
+mains frequency =, 49.9186044E+00
+temperature =,32.6
+Range?:,1e3,Item?:,TC-4 Teflon LEMO current 4-wire Teflon
+Trail1,1000.030727,Trail2,1000.030571
+at,Wed Dec 18 15:26:27 2024,TC-4 Teflon LEMO current 4-wire Teflon,reading is:
+Resistance_mean:,1000.03073944
+Resistance_stdevp:,0.00011935722801261067
+Time taken = ,4.7416311502456665,minutes
+----------------
+Resistor TC-4 Teflon LEMO current 4-wire Teflon-repeat measured by HP3458A with ID number 5
+mains frequency =, 49.9753518E+00
+temperature =,32.6
+Range?:,1e3,Item?:,TC-4 Teflon LEMO current 4-wire Teflon-repeat
+Trail1,1000.030954,Trail2,1000.030706
+at,Wed Dec 18 15:36:31 2024,TC-4 Teflon LEMO current 4-wire Teflon-repeat,reading is:
+Resistance_mean:,1000.0308563499998
+Resistance_stdevp:,0.00013222932138648598
+Time taken = ,4.746074549357096,minutes
+----------------
+Resistor TC-4 Teflon LEMO current 4-wire Banana measured by HP3458A with ID number 5
+mains frequency =, 49.9765582E+00
+temperature =,32.6
+Range?:,1e3,Item?:,TC-4 Teflon LEMO current 4-wire Banana
+Trail1,1000.030611,Trail2,1000.030494
+at,Wed Dec 18 15:45:39 2024,TC-4 Teflon LEMO current 4-wire Banana,reading is:
+Resistance_mean:,1000.0305233900002
+Resistance_stdevp:,0.00014282516648774193
+Time taken = ,4.743227628866832,minutes
+----------------
+Resistor TC-4 Teflon LEMO current 4-wire Banana-repeat measured by HP3458A with ID number 5
+mains frequency =, 49.9734575E+00
+temperature =,32.6
+Range?:,1e3,Item?:,TC-4 Teflon LEMO current 4-wire Banana-repeat
+Trail1,1000.030611,Trail2,1000.030397
+at,Wed Dec 18 15:53:38 2024,TC-4 Teflon LEMO current 4-wire Banana-repeat,reading is:
+Resistance_mean:,1000.0303721999999
+Resistance_stdevp:,0.00012432695571840607
+Time taken = ,4.744369228680928,minutes
+----------------
+end of the measurement

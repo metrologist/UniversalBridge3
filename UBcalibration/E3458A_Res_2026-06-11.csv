@@ -1,0 +1,262 @@
+Auto Calibration
+HP3458A
+mains frequency =, 50.0138293E+00
+temperature =,32.6
+ACAL starting
+ACAL finished
+Time taken = ,16.112394750118256,minutes
+temperature =,32.6
+Cal done
+Thu Jun 11 09:27:26 2026
+end of the measurement
+Resistor Fluke 8508A-7000K Four-wire shorting PCB 410590-A me]asured by HP3458A with ID number 5
+mains frequency =, 49.9414978E+00
+temperature =,32.6
+Range?:,1e-3,Item?:,Fluke 8508A-7000K Four-wire shorting PCB 410590-A
+Trail1,4.714113512e-05,Trail2,3.220014718e-05
+at,Thu Jun 11 09:47:26 2026,Fluke 8508A-7000K Four-wire shorting PCB 410590-A,reading is:
+Resistance_mean:,3.4490442475e-05
+Resistance_stdevp:,9.607350595722582e-06
+Time taken = ,6.137234810988108,minutes
+----------------
+Resistor SR104 StdR (SN:109006)  me]asured by HP3458A with ID number 5
+mains frequency =, 50.0326676E+00
+temperature =,32.6
+Range?:,1e4,Item?:,SR104 StdR (SN:109006) 
+Trail1,10000.00732,Trail2,10000.00729
+at,Thu Jun 11 10:00:21 2026,SR104 StdR (SN:109006) ,reading is:
+Resistance_mean:,10000.007558999998
+Resistance_stdevp:,0.0017327647668819175
+Time taken = ,6.138993406295777,minutes
+----------------
+Resistor SR04TS(temperature Sensor) me]asured by HP3458A with ID number 5
+mains frequency =, 49.9332496E+00
+temperature =,32.7
+Range?:,1e4,Item?:,SR04TS(temperature Sensor)
+Trail1,9971.201136,Trail2,9971.203667
+at,Thu Jun 11 10:09:23 2026,SR04TS(temperature Sensor),reading is:
+Resistance_mean:,9971.23593387
+Resistance_stdevp:,0.019185735294791912
+Time taken = ,6.13579109509786,minutes
+----------------
+Resistor SR1010--100k Parallel with PC 101 (SN:937003) me]asured by HP3458A with ID number 5
+mains frequency =, 49.9458653E+00
+temperature =,32.7
+Range?:,1e4,Item?:,SR1010--100k Parallel with PC 101 (SN:937003)
+Trail1,10000.12642,Trail2,10000.12744
+at,Thu Jun 11 10:22:55 2026,SR1010--100k Parallel with PC 101 (SN:937003),reading is:
+Resistance_mean:,10000.1244368
+Resistance_stdevp:,0.0019637167809423224
+Time taken = ,6.1381014585494995,minutes
+----------------
+Resistor SR1010--100k Series Parallel with PC 102(as above SN:937003) me]asured by HP3458A with ID number 5
+mains frequency =, 50.0271704E+00
+temperature =,32.7
+Range?:,1e5,Item?:,SR1010--100k Series Parallel with PC 102(as above SN:937003)
+Trail1,100001.0166,Trail2,100001.0058
+at,Thu Jun 11 10:35:06 2026,SR1010--100k Series Parallel with PC 102(as above SN:937003),reading is:
+Resistance_mean:,100000.99920700003
+Resistance_stdevp:,0.01581388122423921
+Time taken = ,6.346794943014781,minutes
+----------------
+Resistor SR1010--100k R10 only (SN:937003) me]asured by HP3458A with ID number 5
+mains frequency =, 49.9565661E+00
+temperature =,32.7
+Range?:,1e5,Item?:,SR1010--100k R10 only (SN:937003)
+Trail1,100000.7323,Trail2,100000.7407
+at,Thu Jun 11 10:45:56 2026,SR1010--100k R10 only (SN:937003),reading is:
+Resistance_mean:,100000.72435099998
+Resistance_stdevp:,0.014968846402650445
+Time taken = ,6.340226352214813,minutes
+----------------
+Resistor SR1010--100k R1-R10 inSeries (SN:937003) me]asured by HP3458A with ID number 5
+mains frequency =, 49.8994244E+00
+temperature =,32.7
+Range?:,1e6,Item?:,SR1010--100k R1-R10 inSeries (SN:937003)
+Trail1,1000012.01,Trail2,1000012.483
+at,Thu Jun 11 11:07:10 2026,SR1010--100k R1-R10 inSeries (SN:937003),reading is:
+Resistance_mean:,1000012.6262180002
+Resistance_stdevp:,3.2901677892870116
+Time taken = ,4.301403709252676,minutes
+----------------
+Resistor SR1010_1k parallel_R1-R10 with Pc 101 (SN:923001) me]asured by HP3458A with ID number 5
+mains frequency =, 49.9443497E+00
+temperature =,32.7
+Range?:,1e2,Item?:,SR1010_1k parallel_R1-R10 with Pc 101 (SN:923001)
+Trail1,99.99615101,Trail2,99.99596068
+at,Thu Jun 11 11:21:29 2026,SR1010_1k parallel_R1-R10 with Pc 101 (SN:923001),reading is:
+Resistance_mean:,99.99601477569999
+Resistance_stdevp:,9.963218768478148e-05
+Time taken = ,6.138186343510946,minutes
+----------------
+Resistor SR1010_1k series parallel_R1-R9 with PC 102(SN:923001) me]asured by HP3458A with ID number 5
+mains frequency =, 50.0822104E+00
+temperature =,32.7
+Range?:,1e3,Item?:,SR1010_1k series parallel_R1-R9 with PC 102(SN:923001)
+Trail1,999.9600547,Trail2,999.959962
+at,Thu Jun 11 11:34:01 2026,SR1010_1k series parallel_R1-R9 with PC 102(SN:923001),reading is:
+Resistance_mean:,999.9597982299998
+Resistance_stdevp:,0.00018331722381181376
+Time taken = ,6.137324750423431,minutes
+----------------
+Resistor SR1010_1k R10 only (SN:923001) me]asured by HP3458A with ID number 5
+mains frequency =, 50.0049297E+00
+temperature =,32.7
+Range?:,1e3,Item?:,SR1010_1k R10 only (SN:923001)
+Trail1,999.972747,Trail2,999.9726077
+at,Thu Jun 11 11:44:36 2026,SR1010_1k R10 only (SN:923001),reading is:
+Resistance_mean:,999.972214026
+Resistance_stdevp:,0.00014671008766183331
+Time taken = ,6.136862238248189,minutes
+----------------
+Resistor SR1010_1k series R1-R10(SN:923001) me]asured by HP3458A with ID number 5
+mains frequency =, 50.0535195E+00
+temperature =,32.7
+Range?:,1e4,Item?:,SR1010_1k series R1-R10(SN:923001)
+Trail1,9999.602391,Trail2,9999.604473
+at,Thu Jun 11 11:56:07 2026,SR1010_1k series R1-R10(SN:923001),reading is:
+Resistance_mean:,9999.600725399998
+Resistance_stdevp:,0.014930972872169143
+Time taken = ,6.1376932740211485,minutes
+----------------
+Resistor UB BNC BPO coax zero me]asured by HP3458A with ID number 5
+mains frequency =, 49.9681712E+00
+temperature =,32.6
+Range?:,1e-3,Item?:,UB BNC BPO coax zero
+Trail1,-3.954972239e-06,Trail2,6.501734666e-06
+at,Thu Jun 11 13:21:35 2026,UB BNC BPO coax zero,reading is:
+Resistance_mean:,-3.671779256269002e-07
+Resistance_stdevp:,9.079918587131997e-06
+Time taken = ,6.137821622689565,minutes
+----------------
+Resistor Vishay 100 (RHK02) me]asured by HP3458A with ID number 5
+mains frequency =, 49.9675305E+00
+temperature =,32.7
+Range?:,1e2,Item?:,Vishay 100 (RHK02)
+Trail1,0.0001376523091,Trail2,-6.038168606e-05
+at,Thu Jun 11 13:45:11 2026,Vishay 100 (RHK02),reading is:
+Resistance_mean:,2.0396713285622003e-05
+Resistance_stdevp:,8.340885334987798e-05
+Time taken = ,6.141155278682708,minutes
+----------------
+Resistor Vishay 10k (UBCAL10k)  me]asured by HP3458A with ID number 5
+mains frequency =, 49.9879039E+00
+temperature =,32.7
+Range?:,1e4,Item?:,Vishay 10k (UBCAL10k) 
+Trail1,-0.001078965713,Trail2,7.492817455e-05
+at,Thu Jun 11 13:52:44 2026,Vishay 10k (UBCAL10k) ,reading is:
+Resistance_mean:,2e+36
+Resistance_stdevp:,1.407052941362896e+37
+Time taken = ,6.066131146748861,minutes
+----------------
+Resistor Vishay 100 (RHK02)-right me]asured by HP3458A with ID number 5
+mains frequency =, 50.0050005E+00
+temperature =,32.7
+Range?:,1e2,Item?:,Vishay 100 (RHK02)-right
+Trail1,100.0152858,Trail2,100.0151769
+at,Thu Jun 11 14:00:58 2026,Vishay 100 (RHK02)-right,reading is:
+Resistance_mean:,100.01519478699998
+Resistance_stdevp:,9.919270262292166e-05
+Time taken = ,6.139063199361165,minutes
+----------------
+Resistor 1e4 me]asured by HP3458A with ID number 5
+mains frequency =, 49.9987925E+00
+temperature =,32.7
+Range?:,1e4,Item?:,1e4
+Trail1,10000.31498,Trail2,10000.31792
+at,Thu Jun 11 14:22:52 2026,1e4,reading is:
+Resistance_mean:,10000.314341099998
+Resistance_stdevp:,0.00173020457419347
+Time taken = ,6.137222039699554,minutes
+----------------
+Resistor Vishay 10k (UBCAL10k)-right me]asured by HP3458A with ID number 5
+mains frequency =, 49.9682466E+00
+temperature =,32.7
+Range?:,,Item?:,Vishay 10k (UBCAL10k)-right
+Trail1,10000.31768,Trail2,10000.33052
+at,Thu Jun 11 14:30:33 2026,Vishay 10k (UBCAL10k)-right,reading is:
+Resistance_mean:,10000.321341400002
+Resistance_stdevp:,0.009967996366202051
+Time taken = ,6.339456331729889,minutes
+----------------
+Resistor Vishay 10k (UBCAL10k) me]asured by HP3458A with ID number 5
+mains frequency =, 50.0330171E+00
+temperature =,32.7
+Range?:,1e4,Item?:,Vishay 10k (UBCAL10k)
+Trail1,10000.31666,Trail2,10000.31366
+at,Thu Jun 11 14:38:08 2026,Vishay 10k (UBCAL10k),reading is:
+Resistance_mean:,10000.3146844
+Resistance_stdevp:,0.001470968429775178
+Time taken = ,6.139559539159139,minutes
+----------------
+Resistor Vishay 100k  me]asured by HP3458A with ID number 5
+mains frequency =, 50.0057224E+00
+temperature =,32.7
+Range?:,1e5,Item?:,Vishay 100k 
+Trail1,100002.617,Trail2,100002.6311
+at,Thu Jun 11 14:46:29 2026,Vishay 100k ,reading is:
+Resistance_mean:,100002.59401100001
+Resistance_stdevp:,0.030633357716966472
+Time taken = ,6.341931080818176,minutes
+----------------
+Resistor UB G1 me]asured by HP3458A with ID number 5
+mains frequency =, 50.0680595E+00
+temperature =,32.8
+Range?:,1e5,Item?:,UB G1
+Trail1,99998.2681,Trail2,99998.27409
+at,Thu Jun 11 14:56:11 2026,UB G1,reading is:
+Resistance_mean:,99998.24357889999
+Resistance_stdevp:,0.016354407671934842
+Time taken = ,6.3410348176956175,minutes
+----------------
+Resistor UB G2 me]asured by HP3458A with ID number 5
+mains frequency =, 49.9282211E+00
+temperature =,32.8
+Range?:,1E5,Item?:,UB G2
+Trail1,99998.80672,Trail2,99998.81329
+at,Thu Jun 11 15:04:25 2026,UB G2,reading is:
+Resistance_mean:,99998.79294950001
+Resistance_stdevp:,0.014888297511399147
+Time taken = ,6.3434948762257894,minutes
+----------------
+Resistor UB R4A me]asured by HP3458A with ID number 5
+mains frequency =, 50.0500170E+00
+temperature =,32.8
+Range?:,1E6,Item?:,UB R4A
+Trail1,1000073.202,Trail2,1000073.794
+at,Thu Jun 11 15:10:57 2026,UB R4A,reading is:
+Resistance_mean:,1000073.31594
+Resistance_stdevp:,0.838415579079454
+Time taken = ,4.302348069349924,minutes
+----------------
+Resistor UB R2B me]asured by HP3458A with ID number 5
+mains frequency =, 49.8829539E+00
+temperature =,32.8
+Range?:,1e4,Item?:,UB R2B
+Trail1,10000.58297,Trail2,10000.58164
+at,Thu Jun 11 15:22:08 2026,UB R2B,reading is:
+Resistance_mean:,10000.5803415
+Resistance_stdevp:,0.0015774012479691838
+Time taken = ,6.1439777374267575,minutes
+----------------
+Resistor UB R4C me]asured by HP3458A with ID number 5
+mains frequency =, 50.0008255E+00
+temperature =,32.8
+Range?:,1e5,Item?:,UB R4C
+Trail1,99999.55524,Trail2,99999.54001
+at,Thu Jun 11 15:32:49 2026,UB R4C,reading is:
+Resistance_mean:,99999.52349850003
+Resistance_stdevp:,0.014609232682053155
+Time taken = ,6.343614006042481,minutes
+----------------
+Resistor coaxial zero me]asured by HP3458A with ID number 5
+mains frequency =, 50.0228217E+00
+temperature =,32.8
+Range?:,1e-12,Item?:,coaxial zero
+Trail1,5.990042777e-06,Trail2,-7.44262815e-06
+at,Thu Jun 11 15:41:13 2026,coaxial zero,reading is:
+Resistance_mean:,2.9667886861799995e-07
+Resistance_stdevp:,8.233008747243592e-06
+Time taken = ,6.133518215020498,minutes
+----------------
+end of the measurement

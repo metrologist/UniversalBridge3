@@ -43,7 +43,7 @@ class UUT(object):
         yzero = []
         for x in self.datdict:
             item_label = x['item'] + str(x['nom_freq']) + x['ubrange']
-            answer = ubridge.bridge_value(x['ubrange'], x['rdial'], x['xdial'], x['frequency'], 1, new_label=item_label)
+            answer = self.bridge.bridge_value(x['ubrange'], x['rdial'], x['xdial'], x['frequency'], 1, new_label=item_label)
             #  next multiply the ubrdige values by factors relating to the uut
             if x['item'] != 'coax zero':  # no uncertainty in the coax zero uut
                 uuttemp = ureal(x['temperature'], x['tempu'], x['tempdf'],
@@ -87,7 +87,7 @@ class UUT(object):
     def cmc_check(self):
         cmcs = []  # for the list of cmcs
         for x in self.datdict:
-            cmc = ubridge.cmc_uncert(x['ubrange'], x['rdial'], x['xdial'], x['frequency'])
+            cmc = self.bridge.cmc_uncert(x['ubrange'], x['rdial'], x['xdial'], x['frequency'])
             cmcs.append(cmc)
         return cmcs
 

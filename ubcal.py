@@ -319,7 +319,7 @@ if __name__ == "__main__":
     # For now this is best created manually. This provides a check of dc resistance against the UB values.
     # This uses cal constants calculated in the first part, but as stored in the calfile...i.e. no GTC link.
     # Use readings from dictionary acr_data and compare with dc results in the key_dcr dictionary.
-    calfile = r'ub_dict_cal_test.csv'
+    calfile = r'data_csv\ub_dict_cal_test.csv'
     room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambient temperature given in conditions
     ub = UNIVERSALBRIDGE(calfile, room_temperature)
     for x in acrdata:  # calculate the impedance and admittance

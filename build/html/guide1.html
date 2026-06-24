@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Components &#8212; Universal Bridge 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxdoc.css?v=34905f61" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Universal Bridge 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Components</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>This guide explains where and how to enter the data required for processing with the
+Python software. The main software change since E.023.07 was validated in 2020 is the calibration
+analysis with <em>ubcal.py</em>.The core calculation of the Universal Bridge remains the same. New
+impedance artefacts are likely to require some specific code to ensure that the report meets
+the client’s needs in terms of preferred connection method and relevant zero reference. Final report preparation
+still relies on Excel to manipulate the csv output file into the final report table.</p>
+<img alt="Data_flow2.png" src="Data_flow2.png" />
+<section id="components">
+<h1>Components<a class="headerlink" href="#components" title="Link to this heading">¶</a></h1>
+<p>For each capacitance scale buildup, the current basic characteristics of the key components need to be available. These characteristics are generally measured with an LCR meter.</p>
+<section id="capacitors">
+<h2>Capacitors<a class="headerlink" href="#capacitors" title="Link to this heading">¶</a></h2>
+<p>Measurements are carried out on capacitors defined as two terminal-pair components. It is assumed that the admittances to case, both at the high and low voltage terminals (yhv and ylv) are relatively stable with time so do not need routine remeasurement. These admittances only have a second-order impact on the two terminal-pair value of the capacitor.
+A CAPACITOR object is defined in <em>components.py</em> with a name, nominal capacitance value (capacitance, conductance), yhv (capacitance, conductance), ylv (capacitance, conductance), angular frequency, relative uncertainty (of yhv and ylv), and the option of key word arguments.
+CAPACITOR objects are created by running <em>create_component.py</em> that stores the objects in a csv file. The values are hard coded in the <em>create_capacitors()</em> method and so the code needs modification if new values are required.
+The ‘best value’ of a CAPACITOR will be updated after analysing the results of a scale buildup, but the port admittances remain unaltered.</p>
+</section>
+</section>
+<section id="calibration">
+<h1>Calibration<a class="headerlink" href="#calibration" title="Link to this heading">¶</a></h1>
+<section id="balance-injection">
+<h2>Balance Injection<a class="headerlink" href="#balance-injection" title="Link to this heading">¶</a></h2>
+<p>Calculating the correction factors for the balance injection dials is done by <em>cal_balance.py</em> using data entered in the file dialcal_in_yyyy-mm-dd.csv. There is no script for creating this file, but it does not take long to edit a previous version with the IVD settings, the measured dc value of the Thompson resistor and its parallel capacitance. Be careful not to change any of the quotation marks as they are critical for correctly reading the dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">,</span><span class="mi">07</span><span class="o">-</span><span class="n">Jul</span><span class="o">-</span><span class="mi">25</span>
+<span class="n">Reference</span><span class="p">,</span><span class="n">E005</span> <span class="n">Cap</span><span class="o">.</span> <span class="n">Scale</span><span class="p">,</span> <span class="n">p</span><span class="mf">.64</span><span class="p">,</span> <span class="mi">100</span><span class="n">k</span> <span class="c1">#4</span>
+<span class="n">w</span><span class="p">,</span><span class="mf">1.00E+04</span>
+<span class="n">alpha1</span><span class="p">,</span><span class="s2">&quot;{&quot;&quot;x&quot;&quot;: 0.999759, &quot;&quot;u&quot;&quot;: 2e-06, &quot;&quot;df&quot;&quot;: Infinity, &quot;&quot;label&quot;&quot;: &quot;&quot;alpha1&quot;&quot;}&quot;</span>
+<span class="n">beta1</span><span class="p">,</span><span class="s2">&quot;{&quot;&quot;x&quot;&quot;: -0.000658, &quot;&quot;u&quot;&quot;: 2e-06, &quot;&quot;df&quot;&quot;: Infinity, &quot;&quot;label&quot;&quot;: &quot;&quot;beta1&quot;&quot;}&quot;</span>
+<span class="n">alpha2</span><span class="p">,</span><span class="s2">&quot;{&quot;&quot;x&quot;&quot;: -0.002058, &quot;&quot;u&quot;&quot;: 2e-06, &quot;&quot;df&quot;&quot;: Infinity, &quot;&quot;label&quot;&quot;: &quot;&quot;alpha2&quot;&quot;}&quot;</span>
+<span class="n">beta2</span><span class="p">,</span><span class="s2">&quot;{&quot;&quot;x&quot;&quot;: 1.002480, &quot;&quot;u&quot;&quot;: 2e-06, &quot;&quot;df&quot;&quot;: Infinity, &quot;&quot;label&quot;&quot;: &quot;&quot;beta2&quot;&quot;}&quot;</span>
+<span class="n">r</span><span class="p">,</span><span class="mf">0.01</span>
+<span class="n">k</span><span class="p">,</span><span class="mf">0.2</span>
+<span class="n">c1</span><span class="p">,</span><span class="n">es14</span>
+<span class="n">c2</span><span class="p">,</span><span class="n">gr1000a</span>
+<span class="n">label</span> <span class="n">y3</span><span class="p">,</span><span class="mi">100</span><span class="n">k4</span>
+<span class="n">r3</span><span class="p">,</span><span class="mf">100.198225e3</span>
+<span class="n">ur3</span><span class="p">,</span><span class="mf">0.1</span>
+<span class="n">c3</span><span class="p">,</span><span class="mf">0.028e-12</span>
+<span class="n">uc3</span><span class="p">,</span><span class="mf">0.001e-12</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="python-scripts">
+<h1>Python Scripts<a class="headerlink" href="#python-scripts" title="Link to this heading">¶</a></h1>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Script</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>main.py</em></p></td>
+<td><p>edited to select files for <em>all_buildup.py</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>all_buildup.py</em></p></td>
+<td><p>final analysis of a set of buildups</p></td>
+</tr>
+<tr class="row-even"><td><p><em>analysis.py</em></p></td>
+<td><p>reprocesses raw buildup results with corrections for the constraint and influence quantities</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>archive.py</em></p></td>
+<td><p>general storage of GTC values and dictionaries in csv files</p></td>
+</tr>
+<tr class="row-even"><td><p><em>cal_balance.py</em></p></td>
+<td><p>calculates correction factors for the main balance amplifier</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>cal_main_ratio.py</em></p></td>
+<td><p>calculates the 10:1 voltage ratio</p></td>
+</tr>
+<tr class="row-even"><td><p><em>cap_fit.py</em></p></td>
+<td><p>analyses historical values of all the capacitors</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>capscale.py</em></p></td>
+<td><p>produces raw results from a buildup</p></td>
+</tr>
+<tr class="row-even"><td><p><em>components.py</em></p></td>
+<td><p>objects that contain properties of capacitors and leads (COMPONENT)</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>conditions.py</em></p></td>
+<td><p>manages the dictionary of temperature and pressure measurements</p></td>
+</tr>
+<tr class="row-even"><td><p><em>constrain.py</em></p></td>
+<td><p>manages external calibration values</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>create_component.py</em></p></td>
+<td><p>creates csv files for a COMPONENT</p></td>
+</tr>
+<tr class="row-even"><td><p><em>funcdictl.py</em></p></td>
+<td><p>utility to define functions for MSL-NLF module</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>intertime.py</em></p></td>
+<td><p>utility to convert between different representations of time</p></td>
+</tr>
+<tr class="row-even"><td><p><em>primcal.py</em></p></td>
+<td><p>supports reference.py</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>reference.py</em></p></td>
+<td><p>uses external calibrations to predict values of the reference AH11</p></td>
+</tr>
+<tr class="row-even"><td><p><em>sql_cap.py</em></p></td>
+<td><p>extracts temperatures from the capacitance logging system [in caplogger2014]</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>summary_check.py</em></p></td>
+<td><p>summarises output of capscale.py before final processing</p></td>
+</tr>
+<tr class="row-even"><td><p><em>view.py</em></p></td>
+<td><p>viewer for graphs produced by all_buildup.py</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Components</a><ul>
+<li><a class="reference internal" href="#capacitors">Capacitors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calibration">Calibration</a><ul>
+<li><a class="reference internal" href="#balance-injection">Balance Injection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-scripts">Python Scripts</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/guide1.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Universal Bridge 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Components</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, Keith Jones.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
+    </div>
+  </body>
+</html>

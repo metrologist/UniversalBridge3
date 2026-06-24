@@ -1,0 +1,30 @@
+Resistor ss measured by HP3458A with ID number 5
+mains frequency =, 50.0185116E+00
+temperature =,33.3
+Range?:,10000,Item?:,ss
+Trail1,100001.8924,Trail2,100001.6015
+at,Mon Feb 20 14:08:46 2023,ss,reading is:
+Resistance_mean:,100001.9722
+Resistance_stdevp:,0.013692333624210316
+Time taken = ,0.21534304618835448,minutes
+----------------
+Resistor time measured by HP3458A with ID number 5
+mains frequency =, 49.9524980E+00
+temperature =,33.3
+Range?:,1000,Item?:,time
+Trail1,100001.9585,Trail2,100001.9843
+at,Mon Feb 20 14:10:41 2023,time,reading is:
+Resistance_mean:,100001.96356999999
+Resistance_stdevp:,0.013337880366301834
+Time taken = ,0.7721002697944641,minutes
+----------------
+Resistor 5*20=100 measured by HP3458A with ID number 5
+mains frequency =, 49.9882103E+00
+temperature =,33.3
+Range?:,10000,Item?:,5*20=100
+Trail1,100001.9611,Trail2,100001.9374
+at,Mon Feb 20 14:14:52 2023,5*20=100,reading is:
+Resistance_mean:,100001.934593
+Resistance_stdevp:,0.02410313804529556
+Time taken = ,3.3842071056365968,minutes
+----------------

@@ -6,12 +6,14 @@ from GTC import ureal
 from ubridge3 import UNIVERSALBRIDGE
 from calculate_imp import UUT
 
-calfile = r'ub_dict_nov_2020.csv'
+# calfile = r'ub_dict_nov_2020.csv'
+calfile = r'data_csv/ubdict_2325_1006.csv'
 room_temperature = ureal(20, 0.5, 10, 'temperature')  # this should be the ambient temperature given in conditions
 # create the bridge object
 my_ubridge = UNIVERSALBRIDGE(calfile, room_temperature)  # consider relevance of chosen temperature
 block_descriptor = [9, 30, 1, 15]  # this simply has to correctly match the spreadsheet.
-z_set = UUT(my_ubridge, 'sullivan_nov_2020.xlsx', 'pyUBreadings', block_descriptor, 'sullivan_Results.xlsx', 'pyUBresults')
+# z_set = UUT(my_ubridge, 'sullivan_nov_2020.xlsx', 'pyUBreadings', block_descriptor, 'sullivan_Results.xlsx', 'pyUBresults')
+z_set = UUT(my_ubridge, r'spread_sheets/KJ sullivan_110625_s22176.xlsx', 'pyUBreadings', block_descriptor, 'sullivan_Results.xlsx', 'pyUBresults')
 # note that a different temperature could be used for the UUT
 z_answers, z_zeros = z_set.calculate_values(room_temperature, my_ubridge)
 # for twisted wire connection to inductors there are no coax zeros

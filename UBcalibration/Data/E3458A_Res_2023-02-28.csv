@@ -1,0 +1,35 @@
+Resistor asd measured by HP3458A with ID number 5
+mains frequency =, 49.9943355E+00
+temperature =,33.4
+end of the measurement
+Resistor asd measured by HP3458A with ID number 5
+mains frequency =, 49.9412625E+00
+temperature =,33.4
+Range?:,1e5,Item?:,asd
+Trail1,10000.14113,Trail2,10000.14292
+Resistor asd measured by HP3458A with ID number 5
+mains frequency =, 49.9400578E+00
+temperature =,33.4
+Range?:,1e5,Item?:,asd
+Trail1,10000.14629,Trail2,10000.14359
+Resistor asd measured by HP3458A with ID number 5
+mains frequency =, 49.9456911E+00
+temperature =,33.4
+Range?:,1e5,Item?:,asd
+Trail1,10000.13854,Trail2,10000.15113
+at,Tue Feb 28 11:38:56 2023,asd,reading is:
+Resistance_mean:,10000.1396917
+Resistance_stdevp:,0.008170936552924371
+Time taken = ,4.882765301068624,minutes
+----------------
+Resistor time measured by HP3458A with ID number 5
+mains frequency =, 50.0347317E+00
+temperature =,33.4
+Range?:,1e4,Item?:,time
+Trail1,10000.13697,Trail2,10000.14736
+at,Tue Feb 28 11:47:58 2023,time,reading is:
+Resistance_mean:,10000.143738499999
+Resistance_stdevp:,0.006790111999090795
+Time taken = ,4.741944408416748,minutes
+----------------
+end of the measurement

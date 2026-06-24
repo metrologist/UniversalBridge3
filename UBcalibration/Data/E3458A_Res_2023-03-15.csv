@@ -1,0 +1,91 @@
+Auto Calibration
+HP3458A
+mains frequency =, 49.9979859E+00
+temperature =,32.9
+ACAL starting
+ACAL finished
+Time taken = ,15.799619364738465,minutes
+temperature =,32.9
+Cal done
+Wed Mar 15 08:37:17 2023
+Resistor SR1010_10 // P network measured by HP3458A with ID number 5
+mains frequency =, 49.9580965E+00
+temperature =,32.9
+Range?:,1e1,Item?:,SR1010_10 // P network
+Trail1,-1.000002112,Trail2,-1.000005982
+Resistor SR1010_10 // P Network measured by HP3458A with ID number 5
+mains frequency =, 50.0107098E+00
+temperature =,32.9
+Range?:,e1,Item?:,SR1010_10 // P Network
+Resistor SR1010_10 // P Network measured by HP3458A with ID number 5
+mains frequency =, 49.9808234E+00
+temperature =,32.9
+Range?:,1e1,Item?:,SR1010_10 // P Network
+Trail1,0.9999948313,Trail2,1.000017579
+at,Wed Mar 15 08:55:43 2023,SR1010_10 // P Network,reading is:
+Resistance_mean:,1.000002182678
+Resistance_stdevp:,1.0187268865830168e-05
+Time taken = ,4.743084108829498,minutes
+----------------
+Resistor SR1010_100k // P network measured by HP3458A with ID number 5
+mains frequency =, 50.0527159E+00
+temperature =,32.9
+Range?:,1e4,Item?:,SR1010_100k // P network
+Trail1,10000.12823,Trail2,10000.13082
+at,Wed Mar 15 09:05:50 2023,SR1010_100k // P network,reading is:
+Resistance_mean:,10000.1341406
+Resistance_stdevp:,0.0018379368209771717
+Time taken = ,4.744791694482168,minutes
+----------------
+end of the measurement
+Resistor SR1010_100K S SN 937003 measured by HP3458A with ID number 5
+mains frequency =, 49.9595657E+00
+temperature =,33.0
+Range?:,1e6,Item?:,SR1010_100K S SN 937003
+Trail1,1000015.0,Trail2,1000014.877
+at,Wed Mar 15 09:47:09 2023,SR1010_100K S SN 937003,reading is:
+Resistance_mean:,998424.043953
+Resistance_stdevp:,15912.094014884055
+Time taken = ,3.5207178195317588,minutes
+----------------
+Resistor SR104_10k SN 109006 measured by HP3458A with ID number 5
+mains frequency =, 49.9276520E+00
+temperature =,33.0
+Range?:,1e4,Item?:,SR104_10k SN 109006
+Trail1,10000.00873,Trail2,10000.01083
+at,Wed Mar 15 09:54:32 2023,SR104_10k SN 109006,reading is:
+Resistance_mean:,10000.0123357
+Resistance_stdevp:,0.002569685456204228
+Time taken = ,4.742075753211975,minutes
+----------------
+Resistor SR104 T sensor measured by HP3458A with ID number 5
+mains frequency =, 49.9903745E+00
+temperature =,33.0
+Range?:,1e4,Item?:,SR104 T sensor
+Trail1,9989.380773,Trail2,9989.376095
+at,Wed Mar 15 10:01:26 2023,SR104 T sensor,reading is:
+Resistance_mean:,9989.30761499
+Resistance_stdevp:,0.03955221078333244
+Time taken = ,4.744147566954295,minutes
+----------------
+Resistor SN1010_100k S measured by HP3458A with ID number 5
+mains frequency =, 49.9643792E+00
+temperature =,33.0
+Range?:,1e6,Item?:,SN1010_100k S
+Trail1,1000015.386,Trail2,1000014.961
+at,Wed Mar 15 10:08:36 2023,SN1010_100k S,reading is:
+Resistance_mean:,1000015.82029
+Resistance_stdevp:,0.5419515669408853
+Time taken = ,3.519526998202006,minutes
+----------------
+Resistor Vishay 1M measured by HP3458A with ID number 5
+mains frequency =, 50.0744550E+00
+temperature =,33.0
+Range?:,1e6,Item?:,Vishay 1M
+Trail1,1000002.511,Trail2,1000002.78
+at,Wed Mar 15 10:14:46 2023,Vishay 1M,reading is:
+Resistance_mean:,1000001.71749
+Resistance_stdevp:,0.4549609927726764
+Time taken = ,3.5199093421300254,minutes
+----------------
+end of the measurement

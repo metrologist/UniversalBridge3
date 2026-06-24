@@ -1,0 +1,171 @@
+Resistor ESI 1k S NetworkBars measured by HP3458A with ID number 5
+mains frequency =, 49.9639411E+00
+temperature =,33.3
+Range?:,1.0e+4,Item?:,ESI 1k S NetworkBars
+Trail1,9999.616598,Trail2,9999.617917
+at,Tue Feb 21 11:25:01 2023,ESI 1k S NetworkBars,reading is:
+Resistance_mean:,9999.61760429
+Resistance_stdevp:,0.002538956471755925
+Time taken = ,3.3163714528083803,minutes
+----------------
+Resistor ESI 1k S 2Jumpers measured by HP3458A with ID number 5
+mains frequency =, 49.9861831E+00
+temperature =,33.4
+Range?:,1.0e+4,Item?:,ESI 1k S 2Jumpers
+Trail1,9999.61681,Trail2,9999.618232
+at,Tue Feb 21 13:09:36 2023,ESI 1k S 2Jumpers,reading is:
+Resistance_mean:,9999.61821692
+Resistance_stdevp:,0.0022937730536544583
+Time taken = ,3.317084821065267,minutes
+----------------
+Resistor ESI 1k S//P NetworkBars measured by HP3458A with ID number 5
+mains frequency =, 49.9846038E+00
+temperature =,33.5
+Range?:,1.0e+3.0,Item?:,ESI 1k S//P NetworkBars
+Trail1,999.9600453,Trail2,999.9601261
+at,Tue Feb 21 14:56:41 2023,ESI 1k S//P NetworkBars,reading is:
+Resistance_mean:,999.959931257
+Resistance_stdevp:,0.00034004300893945746
+Time taken = ,3.315375530719757,minutes
+----------------
+Resistor ESI R10 only measured by HP3458A with ID number 5
+mains frequency =, 49.9892947E+00
+temperature =,33.5
+Range?:,1e3,Item?:,ESI R10 only
+Trail1,999.9723963,Trail2,999.9723648
+at,Tue Feb 21 15:06:34 2023,ESI R10 only,reading is:
+Resistance_mean:,999.9720359840001
+Resistance_stdevp:,0.0002667444820969347
+Time taken = ,3.3183455944061278,minutes
+----------------
+Resistor ESI 1k R1 only measured by HP3458A with ID number 5
+mains frequency =, 49.9302578E+00
+temperature =,33.4
+Range?:,1e3,Item?:,ESI 1k R1 only
+Trail1,999.9606649,Trail2,999.9605122
+at,Tue Feb 21 15:12:29 2023,ESI 1k R1 only,reading is:
+Resistance_mean:,999.960356956
+Resistance_stdevp:,0.00026334460862850837
+Time taken = ,3.3168021996815997,minutes
+----------------
+Resistor ESI 1k P// only measured by HP3458A with ID number 5
+mains frequency =, 49.9984765E+00
+temperature =,33.5
+Range?:,1e2,Item?:,ESI 1k P// only
+Trail1,99.99613513,Trail2,99.99621979
+at,Tue Feb 21 15:23:17 2023,ESI 1k P// only,reading is:
+Resistance_mean:,99.99598309619999
+Resistance_stdevp:,0.000190272741168866
+Time taken = ,3.3170809666315715,minutes
+----------------
+Resistor ESI 100 Ohm S network bars measured by HP3458A with ID number 5
+mains frequency =, 49.9532466E+00
+temperature =,33.5
+Range?:,1e2,Item?:,ESI 100 Ohm S network bars
+Trail1,999.9663088,Trail2,999.9663058
+at,Tue Feb 21 16:17:16 2023,ESI 100 Ohm S network bars,reading is:
+Resistance_mean:,999.966338571
+Resistance_stdevp:,0.00022752113688991033
+Time taken = ,3.3171622196833295,minutes
+----------------
+Resistor SI 100 Ohm S 2XJumper Sn:123009  measured by HP3458A with ID number 5
+mains frequency =, 49.9625705E+00
+temperature =,33.4
+Range?:,1e2,Item?:,SI 100 Ohm S 2XJumper Sn:123009 
+Trail1,999.966151,Trail2,999.9664667
+at,Tue Feb 21 16:23:19 2023,SI 100 Ohm S 2XJumper Sn:123009 ,reading is:
+Resistance_mean:,999.966104097
+Resistance_stdevp:,0.0006394636411653689
+Time taken = ,3.316372609138489,minutes
+----------------
+Resistor ESI 100 Ohm R1 only measured by HP3458A with ID number 5
+mains frequency =, 49.9091089E+00
+temperature =,33.4
+Range?:,1e2,Item?:,ESI 100 Ohm R1 only
+Trail1,99.99760975,Trail2,99.99741994
+at,Tue Feb 21 16:30:02 2023,ESI 100 Ohm R1 only,reading is:
+Resistance_mean:,99.99773308690001
+Resistance_stdevp:,0.00015644781537260203
+Time taken = ,3.3160852193832397,minutes
+----------------
+Resistor eSI 100 Ohm P// network bars measured by HP3458A with ID number 5
+mains frequency =, 50.0043070E+00
+temperature =,33.4
+Range?:,1e1,Item?:,eSI 100 Ohm P// network bars
+Trail1,9.999655619,Trail2,9.999643263
+at,Tue Feb 21 16:39:42 2023,eSI 100 Ohm P// network bars,reading is:
+Resistance_mean:,9.999641785050002
+Resistance_stdevp:,1.8982922093372393e-05
+Time taken = ,3.3163668354352316,minutes
+----------------
+Resistor ESI 10 Ohm R1 only SN:A1-1752030 measured by HP3458A with ID number 5
+mains frequency =, 49.9526251E+00
+temperature =,33.4
+Range?:,1e1,Item?:,ESI 10 Ohm R1 only SN:A1-1752030
+Trail1,10.00003884,Trail2,10.00006191
+at,Tue Feb 21 16:46:30 2023,ESI 10 Ohm R1 only SN:A1-1752030,reading is:
+Resistance_mean:,10.0000845213
+Resistance_stdevp:,1.6918248270925834e-05
+Time taken = ,3.330929962793986,minutes
+----------------
+Resistor ESI 10 Ohm S network bars measured by HP3458A with ID number 5
+mains frequency =, 49.9945053E+00
+temperature =,33.4
+Range?:,1.0e+02,Item?:,ESI 10 Ohm S network bars
+Trail1,100.0011595,Trail2,100.000867
+at,Tue Feb 21 16:55:53 2023,ESI 10 Ohm S network bars,reading is:
+Resistance_mean:,100.00091660300001
+Resistance_stdevp:,0.00015355676241661563
+Time taken = ,3.316419998804728,minutes
+----------------
+Resistor ESI 10 Ohm S 2 X jumpers measured by HP3458A with ID number 5
+mains frequency =, 50.0264857E+00
+temperature =,33.4
+Range?:,1.0e+02,Item?:,ESI 10 Ohm S 2 X jumpers
+Trail1,100.000947,Trail2,100.0010492
+at,Tue Feb 21 17:01:07 2023,ESI 10 Ohm S 2 X jumpers,reading is:
+Resistance_mean:,100.00094193599998
+Resistance_stdevp:,0.00022843106314649102
+Time taken = ,3.317480226357778,minutes
+----------------
+Resistor 100k Vishay measured by HP3458A with ID number 5
+mains frequency =, 49.9766524E+00
+temperature =,33.4
+Range?:,1.0e+05,Item?:,100k Vishay
+Trail1,100003.3326,Trail2,100003.4064
+at,Tue Feb 21 17:08:35 2023,100k Vishay,reading is:
+Resistance_mean:,100003.319945
+Resistance_stdevp:,0.04229774780812953
+Time taken = ,3.385103193918864,minutes
+----------------
+Resistor 10k Vishay measured by HP3458A with ID number 5
+mains frequency =, 49.9717754E+00
+temperature =,33.4
+Range?:,1.2e+04,Item?:,10k Vishay
+Trail1,10000.31078,Trail2,10000.33712
+at,Tue Feb 21 17:12:44 2023,10k Vishay,reading is:
+Resistance_mean:,10000.323300900001
+Resistance_stdevp:,0.008150689516120297
+Time taken = ,3.384605181217194,minutes
+----------------
+Resistor 100 Vishay measured by HP3458A with ID number 5
+mains frequency =, 49.9699238E+00
+temperature =,33.4
+Range?:,1.0e+02,Item?:,100 Vishay
+Trail1,100.0147843,Trail2,100.0145569
+at,Tue Feb 21 17:20:47 2023,100 Vishay,reading is:
+Resistance_mean:,100.01475664000002
+Resistance_stdevp:,0.0001989924728282743
+Time taken = ,3.3178133328755695,minutes
+----------------
+end of the measurement
+Auto Calibration
+HP3458A
+mains frequency =, 49.9734198E+00
+temperature =,33.5
+ACAL starting
+ACAL finished
+Time taken = ,16.05079823335012,minutes
+temperature =,33.5
+Cal done
+Tue Feb 21 17:37:30 2023
